@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<!-- Mondzorg Dommelen - One Page Website -->
+<html class="light" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mondzorg Dommelen - Tandartspraktijk Valkenswaard</title>
+<meta name="description" content="Mondzorg Dommelen is een moderne, laagdrempelige tandartspraktijk in Valkenswaard. Tandartsen, mondhygiënistes en preventie-assistentes onder één dak."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                "colors": {
+                    "on-secondary-container": "#596578",
+                    "surface": "#f9f9f9",
+                    "secondary": "#535f72",
+                    "surface-container": "#eeeeee",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#a7c8ff",
+                    "inverse-surface": "#2f3131",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#f9f9f9",
+                    "on-primary-container": "#799dd6",
+                    "tertiary-fixed": "#e0e3e6",
+                    "on-tertiary-fixed-variant": "#43474a",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "primary": "#001e40",
+                    "secondary-fixed-dim": "#bbc7dd",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "surface-dim": "#dadada",
+                    "outline-variant": "#c3c6d1",
+                    "surface-container-high": "#e8e8e8",
+                    "on-background": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#3c4759",
+                    "on-tertiary-container": "#999c9f",
+                    "primary-fixed": "#d5e3ff",
+                    "on-tertiary-fixed": "#181c1e",
+                    "outline": "#737780",
+                    "on-secondary-fixed": "#101c2c",
+                    "primary-container": "#003366",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#c3c7ca",
+                    "tertiary-container": "#303436",
+                    "secondary-fixed": "#d7e3fa",
+                    "secondary-container": "#d7e3fa",
+                    "surface-container-low": "#f3f3f4",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary": "#1b1f21",
+                    "surface-tint": "#3a5f94",
+                    "on-surface-variant": "#43474f",
+                    "on-primary-fixed": "#001b3c",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#1a1c1c",
+                    "surface-variant": "#e2e2e2"
+                },
+                "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+                "spacing": {
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "section-padding": "80px",
+                    "margin-mobile": "16px"
+                },
+                "fontFamily": {
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+                },
+                "fontSize": {
+                    "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #1a1c1c; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Hanken Grotesk', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .material-symbols-outlined[data-weight="fill"] { font-variation-settings: 'FILL' 1; }
+    html { scroll-behavior: smooth; }
+    /* offset for sticky header on anchor jumps */
+    section[id], div[id].anchor-target { scroll-margin-top: 96px; }
+</style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+<!-- ================= TopNavBar ================= -->
+<header class="bg-surface-container-lowest border-b border-outline-variant shadow-sm w-full sticky top-0 z-50 transition-shadow duration-300" id="main-header">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+<!-- Brand Logo -->
+<a aria-label="Mondzorg Dommelen Home" class="flex items-center gap-2 font-bold text-primary" href="#home">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">dentistry</span>
+<span class="font-display-lg text-headline-md md:text-headline-md">Mondzorg Dommelen</span>
+</a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden lg:flex space-x-6 h-full items-center">
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#over-ons">Over ons</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#onze-praktijk">Onze praktijk</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#team">Team</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#tarieven">Tarieven</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#zorg-verzekering">Zorg &amp; Verzekering</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#betalen">Betalen</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#contact">Contact</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#nieuws">Nieuws</a>
+</nav>
+<!-- Actions -->
+<div class="hidden md:flex items-center gap-4">
+<a class="font-label-md text-label-md text-primary border border-primary px-4 py-2 rounded hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors" href="#spoeddienst">Spoed</a>
+<a class="font-label-md text-label-md bg-primary text-on-primary px-4 py-2 rounded hover:bg-primary-container transition-colors" href="#inschrijven">Inschrijven</a>
+</div>
+<!-- Mobile Menu Button -->
+<button aria-label="Open menu" id="mobileMenuBtn" class="lg:hidden p-2 text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+<!-- Mobile Menu Panel -->
+<nav id="mobileMenu" class="hidden lg:hidden bg-surface-container-lowest border-t border-outline-variant px-margin-mobile py-4 flex-col gap-1">
+<a class="block py-2 text-on-surface-variant font-medium hover:text-primary" href="#over-ons">Over ons</a>
+<a class="block py-2 text-on-surface-variant font-medium hover:text-primary" href="#onze-praktijk">Onze praktijk</a>
+<a class="block py-2 text-on-surface-variant font-medium hover:text-primary" href="#team">Team</a>
+<a class="block py-2 text-on-surface-variant font-medium hover:text-primary" href="#tarieven">Tarieven</a>
+<a class="block py-2 text-on-surface-variant font-medium hover:text-primary" href="#zorg-verzekering">Zorg &amp; Verzekering</a>
+<a class="block py-2 text-on-surface-variant font-medium hover:text-primary" href="#betalen">Betalen</a>
+<a class="block py-2 text-on-surface-variant font-medium hover:text-primary" href="#contact">Contact</a>
+<a class="block py-2 text-on-surface-variant font-medium hover:text-primary" href="#nieuws">Nieuws</a>
+<div class="flex gap-3 pt-3">
+<a class="flex-1 text-center font-label-md text-label-md text-primary border border-primary px-4 py-2 rounded" href="#spoeddienst">Spoed</a>
+<a class="flex-1 text-center font-label-md text-label-md bg-primary text-on-primary px-4 py-2 rounded" href="#inschrijven">Inschrijven</a>
+</div>
+</nav>
+</header>
+
+<main>
+
+<!-- ================= HOME / HERO ================= -->
+<section id="home" class="relative w-full h-[60vh] min-h-[400px] max-h-[600px] bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Tandarts behandelt kind met moeder" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida/AP1WRLvNo8dlI3QFhkWzjCoW-pjDR0MaVMSe9G5h9xchvrPXaDPsxqIkQIfRSvm_-qOiZ3Zauqwf17vDXmHbs4bdTWEGygq_RNcfDSeFocyrMcwO_ogaxGGAAaKCYxX8PfJBPbqicofC-csmobqzjjtk_p_BMOdH-B7jyqEPy_1Caflx92iaEz4r2Ck1NoDXzYkvCLdFsfGLFEHlpCqDC7niEbtwjNZ4HV31GA8uJOBsNedEUoIYI8u4Qursat6j"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/80 to-surface/20"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="bg-surface/90 backdrop-blur-sm p-8 rounded-xl border border-outline-variant shadow-sm inline-block max-w-2xl">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Welkom bij Mondzorg Dommelen!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Wij zijn een laagdrempelige moderne tandartspraktijk met een hecht team van tandartsen, mondhygiënistes en (preventie-)assistentes. We vinden het belangrijk dat patiënten zich 'thuis' voelen in de praktijk.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-xl hover:bg-primary-container transition-colors shadow-sm" href="#contact">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">call</span>
+Contact
+</a>
+<a class="flex items-center justify-center gap-2 border border-primary text-primary font-label-md text-label-md px-6 py-3 rounded-xl hover:bg-primary-fixed transition-colors" href="#inschrijven">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">edit_document</span>
+Inschrijven
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= NOTICES (Patiëntenstop + Spoeddienst) ================= -->
+<section class="py-section-padding px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Patiëntenstop Alert -->
+<div class="bg-error-container border border-error/20 p-6 rounded-xl flex items-start gap-4 shadow-sm">
+<span class="material-symbols-outlined text-error text-3xl mt-1" style="font-variation-settings: 'FILL' 1;">error</span>
+<div>
+<h2 class="font-headline-md text-headline-md text-error mb-2">Patiëntenstop</h2>
+<p class="font-body-md text-body-md text-on-error-container">Momenteel ervaren wij een enorme toeloop van nieuwe patiënten, daarom zijn wij genoodzaakt een <strong>patiëntenstop</strong> te hanteren. Wij willen ervoor zorgen dat we een gezond patiëntenbestand hebben, zodat wij nu en in de toekomst de gewenste tandheelkundige zorg kunnen bieden.</p>
+</div>
+</div>
+<!-- Spoeddienst Info -->
+<div id="spoeddienst" class="bg-surface border border-outline-variant p-6 rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<h2 class="font-headline-md text-headline-md text-primary">Spoeddienst</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Buiten onze openingstijden en in het weekend kunt u voor spoedgevallen terecht bij:</p>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/50">
+<p class="font-label-md text-label-md text-primary mb-1">De Tandartsenpost Eindhoven heeft een nieuw telefoonnummer:</p>
+<p class="font-headline-md text-headline-md text-error font-bold">0900-1515</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= INFORMATION BENTO GRID (Adres / Openingstijden / Vergoedingen) ================= -->
+<section class="py-12 px-margin-mobile md:px-gutter max-w-container-max mx-auto bg-surface-container-low rounded-3xl mb-section-padding">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Adresgegevens -->
+<div class="bg-surface p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col h-full">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+Adresgegevens
+</h3>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-2 flex-grow">
+<p>Helenadal 28<br/>5551 BJ Valkenswaard</p>
+<p class="mt-4"><strong>Tel:</strong> <a class="text-primary hover:underline" href="tel:040-2041221">040-2041221</a></p>
+<p><strong>E-mail:</strong> <a class="text-primary hover:underline break-all" href="mailto:info@mondzorgdommelen.nl">info@mondzorgdommelen.nl</a></p>
+</div>
+</div>
+<!-- Openingstijden -->
+<div class="bg-surface p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col h-full md:col-span-2">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">schedule</span>
+Openingstijden
+</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 font-body-md text-body-md text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span class="font-medium">Maandag:</span>
+<span class="text-right">08:00 - 12:00<br/>13:00 - 17:30</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span class="font-medium">Dinsdag:</span>
+<span class="text-right">08:00 - 12:00<br/>13:00 - 17:30</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span class="font-medium">Woensdag:</span>
+<span class="text-right">08:00 - 12:00<br/>13:00 - 17:30</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span class="font-medium">Donderdag:</span>
+<span class="text-right">08:00 - 12:00<br/>13:00 - 17:30</span>
+</div>
+<div class="flex justify-between sm:col-span-2 pt-2">
+<span class="font-medium text-primary">Vrijdag:</span>
+<span class="text-right font-medium text-primary">08:00 - 11:30</span>
+</div>
+</div>
+</div>
+<!-- Vergoedingen Notice -->
+<div class="bg-primary text-on-primary p-6 rounded-xl shadow-sm md:col-span-3 flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="font-body-md text-body-md">
+<strong>Let op:</strong> Wij hebben voor het vervaardigen van protheses (ook op implantaten) een contract met CZ. Check altijd bij uw zorgverzekering wat u vergoed gaat krijgen!
+</p>
+</div>
+</div>
+</section>
+
+<!-- ================= OVER ONS ================= -->
+<section id="over-ons" class="w-full bg-surface-container-lowest border-y border-outline-variant pt-section-padding pb-section-padding px-margin-mobile md:px-gutter">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-6">
+<span class="font-label-md text-label-md text-on-secondary-container uppercase tracking-widest">Onze Praktijk</span>
+<h2 class="font-display-lg text-display-lg text-primary">Over Mondzorg Dommelen</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+Welkom bij Mondzorg Dommelen, uw vertrouwde tandartspraktijk in Valkenswaard. Wij streven ernaar om u de hoogste kwaliteit mondzorg te bieden in een moderne, professionele en comfortabele omgeving. Ons toegewijde team van specialisten staat klaar om u te helpen aan een gezonde en stralende lach.
+</p>
+</div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" alt="Moderne tandartspraktijk receptie" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9e5__s4lcLzxsCaADQY-oSCZTFxL9f4pCx29VnwSlbCfUcZgHsyoMTEg22K8e1pba7Oy8eYFB6BOk3tA1cT1fbkhlX3okbwpqobcL771ha-GR_2XFMarNmb24Btt70e1B4hHU-Wkh3fVH4ghv7gWmjtAn1BzqW2CblmTrQ-S6ZACNZ-KZ388-ZIv2rS1JdqERo4ocGj8qok28ZiibdUMvLzw4IArgcV_oL7nqqLQeITOXJIMIV2V8HW9dWmE3GkI1tRKuSkNmPUez"/>
+</div>
+</div>
+<!-- Visie & Missie Bento -->
+<div class="max-w-container-max mx-auto mt-section-padding">
+<div class="mb-12 text-center md:text-left">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">Onze Visie &amp; Missie</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto md:mx-0">Bij Mondzorg Dommelen geloven we in preventieve zorg en persoonlijke aandacht. We combineren jarenlange ervaring met de nieuwste technologieën.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface p-8 rounded-xl border border-outline-variant flex flex-col gap-4 col-span-1 md:col-span-2 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h4 class="font-headline-md text-headline-md text-primary">Kwaliteit &amp; Professionaliteit</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+Onze behandelingen worden uitgevoerd volgens de hoogste klinische standaarden. We investeren continu in de bijscholing van ons team en in moderne apparatuur om u de beste en meest comfortabele zorg te garanderen. Uw mondgezondheid is onze prioriteit.
+</p>
+</div>
+<div class="bg-surface-tint text-on-primary p-8 rounded-xl flex flex-col gap-4 col-span-1 shadow-sm">
+<span class="material-symbols-outlined text-on-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<h4 class="font-headline-md text-headline-md text-on-primary">Persoonlijke Aandacht</h4>
+<p class="font-body-md text-body-md text-on-primary opacity-90">
+Iedere patiënt is uniek. Wij nemen de tijd om naar uw wensen te luisteren, uw behandelplan zorgvuldig te bespreken en eventuele angsten weg te nemen in een rustige, open setting.
+</p>
+</div>
+<div class="bg-surface p-8 rounded-xl border border-outline-variant flex flex-col gap-4 col-span-1 shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">science</span>
+<h4 class="font-headline-md text-headline-md text-primary">Moderne Technologie</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+Wij maken gebruik van de nieuwste digitale technieken voor nauwkeurige diagnoses en effectieve, pijnloze behandelingen.
+</p>
+</div>
+<div class="bg-surface rounded-xl border border-outline-variant overflow-hidden col-span-1 md:col-span-2 shadow-sm relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Moderne tandheelkundige apparatuur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYAp7euiNzN0yMbrJKEJie3KDZH2szESAOD5U_VSN5WUmn2t3FXDQGkKg_PBq4_oMrXJp_4r1GKxDB4EnRjuGA1hgmOst5Nkrsk_Vru8Dim3WGYyOgE4vChv6ymOBDhe-3Jro_NKcsC6wxFeeUAMuL5wRtasbXYZhOehsKe5ABHWbNtQFaXQS4Yz_2TvqOueIbt-9V3IFyYL35NPO4Yh4260eRRn49T1xSUWdIb0rgP1h_hwhwYTSDiVq45pvmBKSYXIArRBEL_XVR"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8">
+<p class="font-headline-md text-headline-md text-on-primary">Innovatie in mondzorg voor optimaal resultaat.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Partner Banner -->
+<div class="max-w-container-max mx-auto mt-section-padding pt-12 border-t border-outline-variant flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-[32px]">info</span>
+<p class="font-label-md text-label-md text-on-surface-variant max-w-md">Wilt u meer weten over mondgezondheid? Bezoek de onafhankelijke patiëntenwebsite van de KNMT.</p>
+</div>
+<div class="w-48 h-auto opacity-80 hover:opacity-100 transition-opacity mix-blend-multiply">
+<img alt="Alles over het gebit" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLsrZ7Op7A0gCIlLsubhplK6T8KJb9GDEo7YkVl1BSd_pNLJ0COryq1WgNaULnrZbJPrwWcGI_-ryvShjzziZtRbfDLVzOtPvej2lVu5pS2Lod3ck2Ah5NwDNTgpZ5h1YjYLA39Cj10oFPfc8IbyveFEpWzyaZsUTKu4rT1Lz-aP86ze3liy4gvxfh8yXOepw2WtLAaMi-yfuaap9XhvwA2ZrUawoN9jZdVuSDXfcr7dnYfuQET9T2zcB0I"/>
+</div>
+</div>
+</section>
+
+<!-- ================= ONZE PRAKTIJK ================= -->
+<section id="onze-praktijk" class="w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-padding space-y-section-padding">
+<!-- Hero -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="space-y-6">
+<h2 class="font-display-lg text-display-lg text-primary">Onze Praktijk</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+Welkom bij Mondzorg Dommelen, een moderne en preventief ingestelde tandartspraktijk in de gemeente Valkenswaard. Sinds de oprichting in 1982 door tandarts H.M.C. Peeters (destijds Tandartspraktijk Peeters) zetten wij ons in voor hoogwaardige tandheelkundige zorg.
+</p>
+<div class="flex gap-4 pt-4">
+<a class="font-label-md text-label-md bg-primary text-on-primary px-6 py-3 rounded hover:bg-primary-container transition-colors inline-block" href="#vacatures">Bekijk Vacatures</a>
+<a class="font-label-md text-label-md border border-primary text-primary px-6 py-3 rounded hover:bg-surface-container-low transition-colors inline-block" href="#privacy">Privacybeleid</a>
+</div>
+</div>
+<div class="relative h-[400px] rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest">
+<img class="w-full h-full object-cover" alt="Moderne tandartspraktijk receptie" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXwr0I0SpwZYYRdroEtehO5GyIprM5x2fbouVaB5x1chuX2TDHtOv7kT2AY9Dc12mmiXV4YL8mybBfX2J0MlUNRV3Yuztp4RVpKNqOnUqKcDlVI8j9fUA2ohctLwlKlqgvXGQTAHg5S0j1QwYdI9JcH8KghNsQP4s9oVu2dBPc7y76ajRATQ6syT3GPn2y-KMlpL0BPMaj_me0WzImFIgvgsZ5J9-vumFfZLwOSgIt5tgRKr3r7zt98zjBOPp2nYOYruRgOTs6nMFh"/>
+</div>
+</div>
+<!-- Geschiedenis & Visie -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-8 space-y-4">
+<div class="flex items-center gap-3 text-primary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+<h3 class="font-headline-md text-headline-md">Historie &amp; Groei</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+De praktijk verhuisde in 1989 naar het gezondheidscentrum aan het Helenadal. Vanaf 2011 is de praktijk eigendom van tandarts Van de Ven. In 2024 vond er een volledige interne verbouwing plaats, waarbij het aantal behandelkamers werd uitgebreid van twee naar vier om aan de groeiende zorgvraag te voldoen.
+</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-8 space-y-4 flex flex-col justify-center">
+<div class="flex items-center gap-3 text-primary-container mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+<h3 class="font-headline-md text-headline-md">Zorgvisie</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+Gezonde mond, gezond lichaam. Wij streven naar preventie en behoud van uw eigen gebit.
+</p>
+</div>
+<div class="md:col-span-3 bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Certificering &amp; Kwaliteit</h3>
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+Mondzorg Dommelen draagt met trots het KNMT-kwaliteitskeurmerk en is aangesloten bij de klachtenregeling van het KNMT, wat onze toewijding aan veilige, professionele en betrouwbare zorg garandeert.
+</p>
+</div>
+</div>
+</div>
+<!-- Vacatures -->
+<div id="vacatures" class="anchor-target bg-surface-container-low border border-outline-variant rounded-xl p-8 md:p-12 relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-fixed opacity-50 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl">
+<h3 class="font-display-lg text-display-lg text-primary mb-6">Vacatures</h3>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-headline-lg text-headline-lg text-primary">Tandarts (m/v/x)</h4>
+<p class="font-label-md text-label-md text-on-secondary-container mt-1">Regulier en/of waarneming</p>
+</div>
+<span class="bg-primary-fixed text-primary px-3 py-1 rounded-full font-label-md text-label-md">Nieuw</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+Wegens uitbreiding van onze praktijk (van 2 naar 4 kamers) en zwangerschapsverlof zoeken wij een enthousiaste tandarts. Je komt te werken in een moderne, preventief ingestelde praktijk met een hecht en collegiaal team.
+</p>
+<div class="grid md:grid-cols-2 gap-6 mb-6">
+<div>
+<h5 class="font-label-md text-label-md text-primary mb-2">Wij bieden:</h5>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>Werkdagen in overleg.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>Een volledig vernieuwde praktijkomgeving.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>Ondersteuning door ervaren preventieassistenten en mondhygiënisten.</li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-primary mb-2">Profiel:</h5>
+<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>BIG-geregistreerd.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>Affiniteit met algemene tandheelkunde en preventie.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>Patiëntgericht en communicatief vaardig.</li>
+</ul>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md bg-primary text-on-primary px-6 py-3 rounded hover:bg-primary-container transition-colors" href="mailto:info@mondzorgdommelen.nl">
+<span class="material-symbols-outlined">mail</span>
+Solliciteer nu
+</a>
+</div>
+</div>
+</div>
+<!-- Privacybeleid -->
+<div id="privacy" class="anchor-target max-w-4xl mx-auto space-y-8">
+<div class="text-center">
+<h3 class="font-headline-lg text-headline-lg text-primary">Privacybeleid &amp; Algemene Voorwaarden</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Transparantie in hoe wij met uw gegevens omgaan.</p>
+</div>
+<div class="space-y-4">
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-headline-md text-headline-md text-primary">
+Persoonsgegevens die wij verwerken
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant border-t border-outline-variant pt-4">
+Wij verwerken uw persoonsgegevens omdat u gebruik maakt van onze diensten en/of deze zelf aan ons verstrekt. Dit omvat:
+<ul class="list-disc pl-5 mt-2 space-y-1">
+<li>Voor- en achternaam, Geslacht, Geboortedatum</li>
+<li>Adresgegevens, Telefoonnummer, E-mailadres</li>
+<li>Overige persoonsgegevens (bijv. profiel aanmaken, correspondentie)</li>
+<li>Gegevens over gezondheid, BSN-nummer</li>
+</ul>
+</div>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-headline-md text-headline-md text-primary">
+Doel en grondslag verwerking
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant border-t border-outline-variant pt-4">
+Wij verwerken uw gegevens voor: afhandelen van betalingen, contact opnemen indien nodig voor dienstverlening, leveren van goederen/diensten en wettelijke verplichtingen (zoals belastingaangifte en dossierplicht Wet op de geneeskundige behandelovereenkomst (WGBO)).
+</div>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-headline-md text-headline-md text-primary">
+Bewaartermijnen &amp; Delen van gegevens
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant border-t border-outline-variant pt-4">
+<p class="mb-2"><strong>Bewaartermijn:</strong> Wij bewaren uw gegevens niet langer dan strikt nodig of wettelijk verplicht (standaard 20 jaar na laatste wijziging, langer indien medisch relevant).</p>
+<p><strong>Delen met derden:</strong> Wij verkopen uw gegevens niet en verstrekken deze uitsluitend ter uitvoering van onze overeenkomst met u of om te voldoen aan een wettelijke verplichting. Met bedrijven die uw gegevens verwerken in onze opdracht, sluiten wij een bewerkersovereenkomst (zoals een factoringsmaatschappij of tandtechnisch laboratorium).</p>
+</div>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex cursor-pointer items-center justify-between p-6 font-headline-md text-headline-md text-primary">
+Uw Rechten &amp; Beveiliging
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body-md text-body-md text-on-surface-variant border-t border-outline-variant pt-4">
+<p class="mb-2">U heeft recht op inzage, correctie of verwijdering van uw gegevens, evenals het recht op dataportabiliteit. Verzoeken kunt u sturen naar info@mondzorgdommelen.nl (wij vragen een kopie ID ter verificatie, maak BSN en foto zwart).</p>
+<p>Wij nemen passende maatregelen om misbruik, verlies, en ongeautoriseerde toegang tegen te gaan. Onze website gebruikt betrouwbare TLS Certificaten.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section id="team" class="w-full bg-surface-container-lowest border-y border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-padding">
+<div class="mb-section-padding text-center max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Ons Team</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+Dit zijn de medewerkers uit onze praktijk. Ons team staat voor u klaar om u de beste mondzorg te bieden in een ontspannen en professionele omgeving.
+</p>
+</div>
+
+<!-- Tandartsen -->
+<div class="flex items-center gap-4 mb-8 border-b border-surface-variant pb-4">
+<span class="material-symbols-outlined text-primary text-3xl">medical_services</span>
+<h3 class="font-headline-md text-headline-md text-primary">Tandartsen</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-section-padding">
+<!-- Thom Hornman -->
+<div class="bg-surface border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:shadow-sm transition-shadow">
+<img class="w-24 h-24 flex-shrink-0 rounded-full object-cover object-top bg-primary-fixed" alt="Tandarts Thom Hornman" src="images/team/Thom.jpg"/>
+<div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-1">Thom Hornman</h4>
+<p class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-wider">Praktijkeigenaar / Tandarts</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Werkzaam op maandag, dinsdag, donderdag, vrijdag.<br/>BIG-nr: 59910093502</p>
+</div>
+</div>
+<!-- Rianne Hornman-Mensink -->
+<div class="bg-surface border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:shadow-sm transition-shadow">
+<img class="w-24 h-24 flex-shrink-0 rounded-full object-cover object-top bg-primary-fixed" alt="Tandarts Rianne Hornman-Mensink" src="images/team/Rianne.jpg"/>
+<div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-1">Rianne Hornman-Mensink</h4>
+<p class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-wider">Praktijkeigenaar / Tandarts</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Werkzaam op maandag, woensdag, vrijdag.<br/>BIG-nr: 59910112902</p>
+</div>
+</div>
+<!-- Steffanie Klein Kiskamp -->
+<div class="bg-surface border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:shadow-sm transition-shadow">
+<img class="w-24 h-24 flex-shrink-0 rounded-full object-cover object-top bg-primary-fixed" alt="Tandarts Steffanie Klein Kiskamp" src="images/team/Steffanie.jpg"/>
+<div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-1">Steffanie Klein Kiskamp</h4>
+<p class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-wider">Zelfstandig behandelaar / Tandarts</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Werkzaam op woensdag, donderdag.<br/>BIG-nr: 19923166902</p>
+</div>
+</div>
+</div>
+
+<!-- Mondhygiënisten -->
+<div class="flex items-center gap-4 mb-8 border-b border-surface-variant pb-4">
+<span class="material-symbols-outlined text-primary text-3xl">cleaning_services</span>
+<h3 class="font-headline-md text-headline-md text-primary">Mondhygiënisten</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-section-padding">
+<!-- Sandra -->
+<div class="bg-surface border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:shadow-sm transition-shadow">
+<img class="w-24 h-24 flex-shrink-0 rounded-full object-cover object-top bg-primary-fixed" alt="Sandra Scholten-Caris" src="images/team/Sandra.jpg"/>
+<div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-1">Sandra Scholten-Caris</h4>
+<p class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-wider">Mondhygiënist</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Werkzaam op dinsdag, donderdag.</p>
+</div>
+</div>
+<!-- Maud -->
+<div class="bg-surface border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:shadow-sm transition-shadow">
+<img class="w-24 h-24 flex-shrink-0 rounded-full object-cover object-top bg-primary-fixed" alt="Maud Hoeks" src="images/team/Maud.jpg"/>
+<div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-1">Maud Hoeks</h4>
+<p class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-wider">Zelfstandig behandelaar / Mondhygiëniste</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Werkzaam op woensdag, vrijdag.</p>
+</div>
+</div>
+</div>
+
+<!-- Preventieassistentes -->
+<div class="flex items-center gap-4 mb-8 border-b border-surface-variant pb-4">
+<span class="material-symbols-outlined text-primary text-3xl">health_and_safety</span>
+<h3 class="font-headline-md text-headline-md text-primary">Preventieassistentes</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-section-padding">
+<!-- Daisy -->
+<div class="bg-surface border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:shadow-sm transition-shadow">
+<img class="w-24 h-24 flex-shrink-0 rounded-full object-cover object-top bg-primary-fixed" alt="Daisy Guzak" src="images/team/Daisy.jpg"/>
+<div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-1">Daisy Guzak</h4>
+<p class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-wider">Preventieassistente</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Werkzaam op maandag, dinsdag, woensdag.</p>
+</div>
+</div>
+<!-- Mariëlle -->
+<div class="bg-surface border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:shadow-sm transition-shadow">
+<img class="w-24 h-24 flex-shrink-0 rounded-full object-cover object-top bg-primary-fixed" alt="Mariëlle Jonkman-van Beek" src="images/team/Marielle.jpg"/>
+<div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-1">Mariëlle Jonkman-van Beek</h4>
+<p class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-wider">Preventieassistente</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Werkzaam op dinsdag, woensdag, donderdag.</p>
+</div>
+</div>
+<!-- Anita -->
+<div class="bg-surface border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:shadow-sm transition-shadow">
+<img class="w-24 h-24 flex-shrink-0 rounded-full object-cover object-top bg-primary-fixed" alt="Anita Smets-Wijnen" src="images/team/Anita.jpg"/>
+<div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-1">Anita Smets-Wijnen</h4>
+<p class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-wider">Preventieassistente</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Werkzaam op maandag, dinsdag, woensdag, vrijdag.</p>
+</div>
+</div>
+</div>
+
+<!-- Tandarts- / balieassistentes -->
+<div class="flex items-center gap-4 mb-8 border-b border-surface-variant pb-4">
+<span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+<h3 class="font-headline-md text-headline-md text-primary">Tandarts- &amp; balieassistentes</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Desiree -->
+<div class="bg-surface border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:shadow-sm transition-shadow">
+<img class="w-24 h-24 flex-shrink-0 rounded-full object-cover object-top bg-primary-fixed" alt="Desiree van Schaijk" src="images/team/Desiree.jpg"/>
+<div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-1">Desiree van Schaijk</h4>
+<p class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-wider">Tandartsassistente i.o.</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Werkzaam op maandag, donderdag, vrijdag.</p>
+</div>
+</div>
+<!-- Inez -->
+<div class="bg-surface border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:shadow-sm transition-shadow">
+<img class="w-24 h-24 flex-shrink-0 rounded-full object-cover object-top bg-primary-fixed" alt="Inez v.d. Vrugt" src="images/team/Inez.jpg"/>
+<div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-1">Inez v.d. Vrugt</h4>
+<p class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-wider">Tandarts- / balieassistente</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Werkzaam op maandag, dinsdag.</p>
+</div>
+</div>
+<!-- Wendy -->
+<div class="bg-surface border border-outline-variant rounded-xl p-6 flex items-center gap-4 hover:shadow-sm transition-shadow">
+<img class="w-24 h-24 flex-shrink-0 rounded-full object-cover object-top bg-primary-fixed" alt="Wendy de Groot-van Deursen" src="images/team/Wendy.jpg"/>
+<div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-1">Wendy de Groot-van Deursen</h4>
+<p class="font-label-md text-label-md text-secondary mb-2 uppercase tracking-wider">Tandarts- / balieassistente</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Werkzaam op woensdag, donderdag, vrijdag.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= TARIEVEN ================= -->
+<section id="tarieven" class="w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-padding">
+<div class="mb-12 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="max-w-2xl">
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Tarieven 2024</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+Hier vindt u een overzicht van de door de NZa (Nederlandse Zorgautoriteit) vastgestelde maximumtarieven voor tandheelkundige zorg, geldig vanaf 1 januari 2024.
+</p>
+</div>
+<div class="w-full md:w-auto flex flex-col sm:flex-row gap-4">
+<div class="relative w-full sm:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors font-body-md text-on-surface" id="searchInput" placeholder="Zoek op code of behandeling..." type="text"/>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 mb-12">
+<p class="font-body-md text-body-md text-on-surface">
+De tandheelkundige tarieven in Nederland worden jaarlijks vastgesteld door de Nederlandse Zorgautoriteit (NZa). Dit zijn maximumtarieven; iedere tandartspraktijk hanteert dezelfde codes en bedragen. Hieronder ziet u een aantal veelvoorkomende behandelcodes. Gebruik de zoekbalk om snel een specifieke code of behandeling te vinden. Heeft u vragen over een tarief of een begroting voor een grotere behandeling? Neem dan gerust contact met ons op.
+</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="tarievenTable">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider w-24">Code</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Omschrijving Behandeling</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider text-right w-32">Tarief (€)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant font-body-md text-body-md" id="tableBody">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-6 text-primary font-medium">C001</td>
+<td class="py-4 px-6 text-on-surface-variant group-hover:text-on-surface transition-colors">Consult voor een periodieke controle</td>
+<td class="py-4 px-6 text-right font-medium text-on-surface">€ 26,75</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-6 text-primary font-medium">C002</td>
+<td class="py-4 px-6 text-on-surface-variant group-hover:text-on-surface transition-colors">Consult voor een probleemgericht onderzoek</td>
+<td class="py-4 px-6 text-right font-medium text-on-surface">€ 26,75</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group bg-surface-container-low/30">
+<td class="py-3 px-6 text-on-surface-variant text-sm italic text-center" colspan="3">
+Gebruik de zoekbalk hierboven om specifieke behandelingen uit de volledige lijst te vinden.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- ================= ZORG & VERZEKERING ================= -->
+<section id="zorg-verzekering" class="w-full bg-surface-container-lowest border-y border-outline-variant py-section-padding px-margin-mobile md:px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="mb-12 text-center md:text-left">
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Mondzorg en Verzekeren</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto md:mx-0">
+Begrijp hoe uw tandartskosten worden gedekt door uw zorgverzekering. Wij bieden transparante informatie over vergoedingen voor jeugd, volwassenen en onze samenwerkingen met zorgverzekeraars.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Jeugd -->
+<div class="md:col-span-8 bg-surface border border-surface-variant rounded-xl p-8 relative overflow-hidden group">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary-fixed-dim opacity-20 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-700"></div>
+<div class="flex items-center gap-3 mb-6 relative z-10">
+<span class="material-symbols-outlined text-primary text-3xl">child_care</span>
+<h3 class="font-headline-md text-headline-md text-primary">Vergoedingen Jeugd (tot 18 jaar)</h3>
+</div>
+<div class="max-w-none font-body-md text-body-md text-on-surface-variant relative z-10 space-y-4">
+<p>
+Goede mondzorg begint vroeg. Voor kinderen en jongeren tot 18 jaar worden vrijwel alle reguliere tandartskosten volledig vergoed vanuit de basisverzekering. Dit betekent dat u geen eigen risico of eigen bijdrage betaalt voor preventieve en noodzakelijke behandelingen.
+</p>
+<ul class="list-none space-y-2 mt-4">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1">check_circle</span>
+<span><strong>Periodieke controle:</strong> Reguliere controles, meestal één of twee keer per jaar.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1">check_circle</span>
+<span><strong>Preventie:</strong> Mondhygiëne-instructies en gebitsreiniging.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm mt-1">check_circle</span>
+<span><strong>Behandelingen:</strong> Vullingen, fluoridebehandelingen en het trekken van tanden/kiezen (met uitzondering van orthodontie).</span>
+</li>
+</ul>
+<div class="mt-6 p-4 bg-surface-container-low rounded-lg border-l-4 border-primary">
+<p class="font-label-md text-label-md text-primary-container m-0">
+<strong>Let op:</strong> Orthodontie (beugels) valt buiten de basisdekking. Hiervoor is een aanvullende verzekering nodig.
+</p>
+</div>
+</div>
+</div>
+<!-- Image -->
+<div class="md:col-span-4 rounded-xl overflow-hidden border border-surface-variant relative min-h-[300px]">
+<img class="absolute inset-0 w-full h-full object-cover" alt="Tandarts met kind" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6t67ENBt4hYTv0vfROOrQdbeWhTWkxkLKvOx_h4f55pmL6uKEBbuNXfh6u5zM1KRR1vtV89VEJpm36hpzDCjlzegxT9ZwO0rx-QPYt0eUD7IMbaNanuURvP_50oIVXLoPiAeGs7xaO9PnB1VBXxeQEnbaDgcSJpUZrGmId8FXjNFuG9Wmu7EY9tuLDfYCiuyPJL6TCicPqAmzk60zXSCbuDLJdgE5jVbNWmJUXGyAtJjol90vyyhVxe21VrATQF6irnVDNV8NqI1L"/>
+</div>
+<!-- Volwassenen -->
+<div class="md:col-span-6 bg-surface border border-surface-variant rounded-xl p-8 relative">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">person</span>
+<h3 class="font-headline-md text-headline-md text-primary">Vergoedingen Volwassenen</h3>
+</div>
+<div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<p>
+Voor volwassenen (18 jaar en ouder) zit mondzorg niet standaard in het basispakket. U bent zelf verantwoordelijk voor de kosten, tenzij u een aanvullende tandartsverzekering heeft afgesloten.
+</p>
+<p>Uitzonderingen hierop zijn:</p>
+<ul class="list-none space-y-2 mt-4">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-outline text-sm mt-1">info</span>
+<span>Chirurgische tandheelkundige hulp (uitgevoerd door een kaakchirurg).</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-outline text-sm mt-1">info</span>
+<span>Röntgenonderzoek voor chirurgische hulp.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-outline text-sm mt-1">info</span>
+<span>Uitneembare volledige protheses (kunstgebit). Hierbij geldt vaak wel een eigen bijdrage.</span>
+</li>
+</ul>
+<p class="mt-4 text-sm text-on-surface-variant italic">
+Raadpleeg de polisvoorwaarden van uw aanvullende verzekering om exact te zien welke behandelingen (tot welk bedrag) u vergoed krijgt.
+</p>
+</div>
+</div>
+<!-- Verzekeraars -->
+<div class="md:col-span-6 bg-primary text-on-primary rounded-xl p-8 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-inverse-primary text-3xl">handshake</span>
+<h3 class="font-headline-md text-headline-md text-on-primary">Overeenkomsten Zorgverzekeraars</h3>
+</div>
+<div class="space-y-4 font-body-md text-body-md text-on-primary/90">
+<p>
+Om het u zo gemakkelijk mogelijk te maken, werken wij samen met de meeste grote zorgverzekeraars in Nederland. Voor specifieke behandelingen hebben wij direct afspraken gemaakt.
+</p>
+<div class="bg-primary-container/50 rounded-lg p-5 mt-6 border border-on-primary/10">
+<h4 class="font-label-md text-label-md text-inverse-primary mb-2 uppercase tracking-wider">CZ en VGZ Groepen</h4>
+<p class="mb-0">
+Mondzorg Dommelen heeft voor de <strong>techniekkosten</strong> (bijvoorbeeld kronen, bruggen, en protheses) specifieke afspraken gemaakt met de verzekeraars binnen de CZ-groep en VGZ-groep.
+</p>
+<p class="mt-2 mb-0 text-sm">
+Dit betekent dat wij de tarieven hanteren die door deze verzekeraars zijn vastgesteld, wat voor u resulteert in maximale transparantie en vaak een directere afhandeling van declaraties.
+</p>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-end">
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-inverse-primary hover:text-on-primary transition-colors" href="#tarieven">
+Bekijk alle tarieven <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= BETALEN ================= -->
+<section id="betalen" class="w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-padding">
+<div class="mb-12">
+<h2 class="font-display-lg text-display-lg text-primary mb-6">Betalen</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+Wij vinden het belangrijk dat het betalen van uw behandeling zo eenvoudig en duidelijk mogelijk verloopt. Op deze pagina leest u hoe wij onze nota's verzenden, welke betaalmogelijkheden er in de praktijk zijn en welke betalingsvoorwaarden van toepassing zijn.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main -->
+<div class="md:col-span-8 flex flex-col gap-12">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 shadow-sm">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">receipt_long</span>
+<h3 class="font-headline-md text-headline-md text-primary">Nota's via Famed</h3>
+</div>
+<div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<p>De facturatie van onze behandelingen verloopt via Famed, een gespecialiseerde factoringsmaatschappij. Na uw behandeling ontvangt u de nota rechtstreeks van Famed, per post of digitaal. Met Famed weet u zeker dat uw factuur correct en overzichtelijk is opgesteld.</p>
+<p>Op de nota staat duidelijk omschreven welke behandelingen zijn uitgevoerd, met de bijbehorende prestatiecodes en tarieven. U kunt deze nota indienen bij uw zorgverzekeraar voor (gedeeltelijke) vergoeding. Heeft u een vraag over de betaaltermijn of wilt u een betalingsregeling treffen? Dan kunt u hierover rechtstreeks contact opnemen met Famed.</p>
+</div>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Direct afrekenen</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">credit_card</span>
+<h4 class="font-label-md text-label-md text-primary">Pinbetaling</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+In de praktijk kunt u eenvoudig en veilig met pin betalen. Onze balie is voorzien van een modern pinapparaat dat ook contactloos betalen ondersteunt.
+</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">payments</span>
+<h4 class="font-label-md text-label-md text-primary">Contant</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+Betalen met contant geld is eveneens mogelijk aan de balie. Wij verzoeken u vriendelijk om indien mogelijk gepast te betalen.
+</p>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Betalingsvoorwaarden KNMT</h3>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-4 bg-surface-container p-6 rounded-xl border border-outline-variant">
+<p>Op al onze behandelingen en facturen zijn de betalingsvoorwaarden van de KNMT (Koninklijke Nederlandse Maatschappij tot bevordering der Tandheelkunde) van toepassing. Hierin staat onder meer beschreven binnen welke termijn een nota voldaan dient te worden en wat de procedure is bij een te late betaling.</p>
+<a class="text-primary font-label-md text-label-md hover:underline inline-flex items-center gap-2 mt-2" href="#">
+Download de volledige voorwaarden (PDF)
+<span class="material-symbols-outlined text-sm">download</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Sidebar -->
+<aside class="md:col-span-4 flex flex-col gap-6">
+<div class="rounded-xl overflow-hidden border border-outline-variant shadow-sm bg-surface-container-lowest">
+<img class="w-full h-48 object-cover" alt="Balie met pinautomaat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ-QiQMzADCM0OysuXywOVyERG5Zdsmtd9EgDJKuzFUCSEF0rjizLSinvJWLN_Ehokdluv06tvl-LxVXojStOjutlBtkE7zJj3Cu7Tf66eRK7o82N7zkCgZTPS_SmgxqA-JyYguHJhUot5YahVelq85dU1IywT6jrqoX2a7dL7QqZZ05Y5g9lRlYCpk34wyDiK_K8aGKr1XTEPM2Bzf54PxsKOEM6aYsS2H3tHCPnEC-MdboAvpreBxKNz6-Y71GdrNh4VceDULgK1"/>
+<div class="p-6">
+<h4 class="font-label-md text-label-md text-primary mb-2">Vragen over uw nota?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Neem contact op met onze administratie of log in bij Famed voor een overzicht van uw declaraties.</p>
+<a href="https://www.famed.nl" target="_blank" rel="noopener noreferrer" class="block text-center w-full py-2 bg-primary text-on-primary font-label-md text-label-md rounded hover:bg-primary-container transition-colors">
+Naar Famed.nl
+</a>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant rounded-xl p-6">
+<h4 class="font-label-md text-label-md text-primary mb-4">Hulp nodig?</h4>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">phone</span>
+<a href="tel:040-2041221" class="font-body-md text-body-md text-on-surface-variant hover:text-primary">040-2041221</a>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">mail</span>
+<a href="mailto:balie@mondzorgdommelen.nl" class="font-body-md text-body-md text-on-surface-variant hover:text-primary break-all">balie@mondzorgdommelen.nl</a>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="w-full bg-surface-container-lowest border-y border-outline-variant py-section-padding px-margin-mobile md:px-gutter">
+<div class="max-w-container-max mx-auto space-y-section-padding">
+<div class="text-center md:text-left max-w-3xl">
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Contactgegevens</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Vind hier alle informatie om in contact te komen met Mondzorg Dommelen. Wij staan klaar om uw vragen te beantwoorden.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main contact info -->
+<div class="md:col-span-8 bg-surface border border-surface-container-highest rounded-xl p-8 shadow-[0_2px_10px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">home_work</span>
+Adresgegevens
+</h3>
+<address class="not-italic font-body-lg text-body-lg text-on-surface space-y-2 mb-8">
+<p class="font-semibold">Mondzorg Dommelen</p>
+<p>Helenadal 28</p>
+<p>5551 CA Valkenswaard</p>
+</address>
+</div>
+<div class="space-y-6">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">call</span>
+Telefonische Bereikbaarheid
+</h3>
+<p class="font-body-lg text-body-lg text-on-surface flex items-center gap-2 mb-4">
+<span class="font-semibold">Telefoon:</span>
+<a class="text-primary hover:text-primary-container underline transition-colors" href="tel:040-2041221">040-2041221</a>
+</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-surface-container-highest">
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider">Maandag t/m Donderdag</h4>
+<ul class="font-body-md text-body-md text-on-surface space-y-1">
+<li>08:30 - 12:00 uur</li>
+<li>13:30 - 17:00 uur</li>
+</ul>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-surface-container-highest">
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider">Vrijdag</h4>
+<ul class="font-body-md text-body-md text-on-surface space-y-1">
+<li>08:30 - 12:00 uur</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Urgent & opening hours -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="bg-error-container border border-error rounded-xl p-6 shadow-[0_2px_10px_rgba(0,0,0,0.03)] flex flex-col h-full justify-center">
+<h3 class="font-headline-md text-headline-md text-error mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined" data-weight="fill">warning</span>
+Spoed buiten openingstijden
+</h3>
+<p class="font-body-md text-body-md text-on-error-container mb-6">
+Voor spoedgevallen buiten onze reguliere openingstijden en in het weekend kunt u contact opnemen met de Tandartsenpost via <strong>0900-1515</strong>.
+</p>
+<a class="inline-flex items-center justify-center gap-2 bg-error text-on-error font-label-md text-label-md px-6 py-3 rounded hover:opacity-90 transition-opacity w-full" href="#spoeddienst">
+Bekijk Spoedprocedure
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<div class="bg-surface border border-surface-container-highest rounded-xl p-6 shadow-[0_2px_10px_rgba(0,0,0,0.03)] flex-1">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">schedule</span>
+Openingstijden
+</h3>
+<div class="space-y-3 font-body-md text-body-md text-on-surface">
+<div class="flex justify-between items-center py-2 border-b border-surface-container-highest">
+<span class="text-on-surface-variant">Maandag</span><span class="font-medium">08:00 - 17:00</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-surface-container-highest">
+<span class="text-on-surface-variant">Dinsdag</span><span class="font-medium">08:00 - 17:00</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-surface-container-highest">
+<span class="text-on-surface-variant">Woensdag</span><span class="font-medium">08:00 - 17:00</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-surface-container-highest">
+<span class="text-on-surface-variant">Donderdag</span><span class="font-medium">08:00 - 17:00</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-surface-container-highest">
+<span class="text-on-surface-variant">Vrijdag</span><span class="font-medium">08:00 - 12:00</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-on-surface-variant">Weekend</span><span class="font-medium text-secondary">Gesloten</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Map -->
+<div class="w-full bg-surface border border-surface-container-highest rounded-xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.03)] h-96 relative group">
+<img alt="Kaart naar Mondzorg Dommelen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlqu4AUz6PmqHyulRHt4IHDty5P2PE_ifbCofqEEDYGKqra50a4Vpg5Gjrt7Qkfav6lgxrBsZl1tQoYo9ZbS1GuDurEbVm0gfwyiAa0ETOk_wDgc1bGCtgsF-AEI_qF6PmzqjVGYZft-kTw23pzpTvL8ws9xHcVF9CKwbXVCXtg-7HXrsj6vVifszlleM7Ab5a6UySoCk1n8NX_Bg-dL_1PPzuTuljVjiS4-LwbZDSaR8P0pTcEp8ALWXpxB1Ty3mGmedjUb90tlDg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end pointer-events-none">
+<div class="bg-surface-container-lowest/90 backdrop-blur-sm p-4 rounded-lg shadow-sm border border-surface-container-highest max-w-sm pointer-events-auto">
+<p class="font-body-md text-body-md text-on-surface font-medium mb-2">Helenadal 28, Valkenswaard</p>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary hover:text-primary-container transition-colors group/link" href="https://maps.google.com/?q=Helenadal+28,+5551+CA+Valkenswaard" rel="noopener noreferrer" target="_blank">
+Routebeschrijving
+<span class="material-symbols-outlined text-[16px] group-hover/link:translate-x-1 transition-transform">directions</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= NIEUWS ================= -->
+<section id="nieuws" class="w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-padding">
+<div class="mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Nieuws en Actualiteiten</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Blijf op de hoogte van de laatste ontwikkelingen binnen onze praktijk, belangrijke gezondheidscampagnes en tips voor een optimale mondverzorging.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Featured -->
+<article class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+<div class="h-64 w-full bg-surface-variant relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Moderne tandartspraktijk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1gYE1s7V_hdmms-ii0FOyN0p8JjyhDvEJ7PHL6FwAsqx_phLJLIN0I-N1Yjxx6mswRjB3PFQi7tCQmvW0K8dem8pemH2rORkewC3mR1Z7t_QanXLdqkVxDjpmK6eDFbyp_pHkLdlJfkigPMQ9IxQGvMGLHSH93kHM93FyRFY4QTBfcxzexfgl1OBHl7DKCpXCac9ekAccQWQc1iX7WyOwhEE3bXq5Ua4y1hP26wsHd3F3kwokNFKbvOAeNb-205v95bEsJOfGdLlB"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded font-label-md text-label-md">Uitgelicht</div>
+</div>
+<div class="p-6 md:p-8 flex-grow flex flex-col">
+<div class="flex items-center space-x-4 text-on-surface-variant mb-3 font-label-md text-label-md">
+<span><span class="material-symbols-outlined align-middle mr-1 text-[18px]">calendar_today</span> 15 Okt 2024</span>
+<span><span class="material-symbols-outlined align-middle mr-1 text-[18px]">category</span> Campagne</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4 group-hover:text-primary-container transition-colors">Start Landelijke Campagne Mondzorg voor Ouderen</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+We zijn trots om aan te kondigen dat Mondzorg Dommelen deelneemt aan de landelijke campagne gericht op de verbetering van mondzorg voor senioren. Goede mondgezondheid is essentieel voor de algehele gezondheid en kwaliteit van leven, vooral op latere leeftijd. Ontdek wat deze campagne voor u of uw naasten kan betekenen.
+</p>
+<a class="inline-flex items-center text-primary font-label-md text-label-md hover:underline" href="#">
+Lees meer over de campagne <span class="material-symbols-outlined ml-1">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Sidebar articles -->
+<div class="md:col-span-4 flex flex-col space-y-8">
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+<div class="h-40 w-full bg-surface-variant">
+<img class="w-full h-full object-cover" alt="Tandheelkundige instrumenten" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFcQLPIH-MIbveYbX3JSqoW264pdxy4QpUYBuqN6pkBdIDAX1jDAiEgCUm22rqF4FnMx9Pfk6GDMCftVBqqQdhjAQ3X7BAaaWr3rSVqduuc6m1MzbVxnRdLwJ--TKnpBjFABTy91w_jB6qJRTvtmi2hqGzZpT-CY_1nw0mE2Uyy3zhqbf2K0knLKT7UIapZjAtt0VwXwFLvkFyDKfwHTy1SdCpo58dy5H5vkgEiB6m5lobmMginUx9rrJ6lzQ17YUCpyzFlzy3BVtT"/>
+</div>
+<div class="p-5 flex-grow flex flex-col">
+<div class="text-on-surface-variant mb-2 font-label-md text-label-md"><span>2 Nov 2024</span></div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-3">Nieuwe apparatuur voor nauwkeurigere diagnoses</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow text-sm">
+Onze praktijk is recent uitgerust met de nieuwste generatie 3D-scanners, waardoor we nog sneller en preciezer behandelplannen kunnen opstellen.
+</p>
+<a class="inline-flex items-center text-primary font-label-md text-label-md hover:underline text-sm" href="#">
+Bekijk de update <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+<div class="p-5 flex-grow flex flex-col border-t-4 border-primary">
+<div class="text-on-surface-variant mb-2 font-label-md text-label-md"><span>28 Sep 2024</span></div>
+<h4 class="font-headline-md text-[20px] leading-tight text-primary mb-3">Gewijzigde openingstijden rond de feestdagen</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow text-sm">
+Let op: rondom de komende feestdagen hanteren wij aangepaste openingstijden. Bekijk het overzicht zodat u niet voor een gesloten deur staat.
+</p>
+<a class="inline-flex items-center text-primary font-label-md text-label-md hover:underline text-sm" href="#">
+Bekijk tijden <span class="material-symbols-outlined ml-1 text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- ================= INSCHRIJVEN ================= -->
+<section id="inschrijven" class="w-full bg-surface-container-lowest border-t border-outline-variant py-section-padding px-margin-mobile md:px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="mb-12 max-w-3xl mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Inschrijven</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">We verwelkomen u graag als nieuwe patiënt. Vul het onderstaande formulier in om uw inschrijving te starten.</p>
+</div>
+<!-- Patientenstop alert -->
+<div class="max-w-3xl mx-auto mb-10 bg-surface-container-high border-l-4 border-error p-6 rounded-r-lg shadow-sm flex items-start gap-4">
+<span class="material-symbols-outlined text-error mt-1" data-weight="fill">info</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Patiëntenstop</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Momenteel hebben wij helaas een patiëntenstop voor reguliere behandelingen. We nemen enkel nog nieuwe patiënten aan voor specifieke specialistische zorg. Neem telefonisch contact op voor de mogelijkheden.</p>
+</div>
+</div>
+<!-- Form -->
+<div class="max-w-3xl mx-auto bg-surface border border-surface-container-highest rounded-xl p-6 md:p-10 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed opacity-20 rounded-bl-full pointer-events-none"></div>
+<form action="#" class="relative z-10 space-y-8" method="POST">
+<div class="flex items-center justify-between mb-8 pb-8 border-b border-surface-variant">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md mb-2">1</div>
+<span class="font-label-md text-label-md text-primary hidden md:block">Persoonsgegevens</span>
+</div>
+<div class="h-[2px] flex-grow bg-surface-variant mx-4"></div>
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-md text-label-md mb-2">2</div>
+<span class="font-label-md text-label-md text-on-surface-variant hidden md:block">Medische Historie</span>
+</div>
+<div class="h-[2px] flex-grow bg-surface-variant mx-4"></div>
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-md text-label-md mb-2">3</div>
+<span class="font-label-md text-label-md text-on-surface-variant hidden md:block">Verzekering</span>
+</div>
+</div>
+<div class="space-y-6">
+<h3 class="font-headline-md text-headline-md text-primary">Uw Gegevens</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-background" for="firstName">Voornaam *</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md text-on-background placeholder:text-outline" id="firstName" name="firstName" required type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-background" for="lastName">Achternaam *</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md text-on-background placeholder:text-outline" id="lastName" name="lastName" required type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-background" for="email">E-mailadres *</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md text-on-background placeholder:text-outline" id="email" name="email" required type="email"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-background" for="phone">Telefoonnummer *</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md text-on-background placeholder:text-outline" id="phone" name="phone" required type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-background" for="bsn">BSN Nummer *</label>
+<input class="w-full md:w-1/2 px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md text-on-background placeholder:text-outline" id="bsn" name="bsn" required type="text"/>
+<p class="text-sm text-on-surface-variant mt-1">Voor medische registratie zijn wij verplicht uw BSN te noteren.</p>
+</div>
+</div>
+<div class="pt-8 flex justify-end">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-8 py-3 rounded hover:bg-primary-container transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-primary flex items-center gap-2" type="button">
+Volgende Stap
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-surface-container-high w-full pt-12 border-t border-outline-variant/50">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto mb-8">
+<div class="flex flex-col gap-4">
+<a class="font-headline-md text-headline-md font-bold text-primary flex items-center gap-2" href="#home">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">dentistry</span>
+Mondzorg Dommelen
+</a>
+<p class="font-body-md text-body-md text-on-secondary-container">Moderne en laagdrempelige tandartspraktijk in Valkenswaard.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-label-md text-label-md text-primary mb-2">Contact</h4>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="#contact">Helenadal 28, Valkenswaard</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="tel:040-2041221">040-2041221</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors break-all" href="mailto:info@mondzorgdommelen.nl">info@mondzorgdommelen.nl</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-label-md text-label-md text-primary mb-2">Informatie</h4>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="#contact">Openingstijden</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="#spoeddienst">Spoeddienst</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="#tarieven">Tarieven</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="#betalen">Betalen</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="#privacy">Privacybeleid</a>
+</div>
+<div class="flex flex-col gap-2 items-start md:items-end">
+<h4 class="font-label-md text-label-md text-primary mb-2">Kwaliteit</h4>
+<div class="bg-surface p-2 rounded border border-outline-variant">
+<span class="font-label-md text-label-md text-primary">KNMT Kwaliteitskeurmerk</span>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto border-t border-outline-variant/30 py-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">© 2024 Mondzorg Dommelen. Alle rechten voorbehouden.</p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary text-sm" href="#privacy">Privacybeleid</a>
+<a class="text-on-surface-variant hover:text-primary text-sm" href="#">Cookiebeleid</a>
+</div>
+</div>
+</footer>
+
+<script>
+    // Header shadow on scroll
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('main-header');
+        if (window.scrollY > 10) {
+            header.classList.add('shadow-md');
+            header.classList.remove('shadow-sm');
+        } else {
+            header.classList.remove('shadow-md');
+            header.classList.add('shadow-sm');
+        }
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+    });
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+    });
+
+    // Tarieven table search
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('keyup', function () {
+            const filter = this.value.toUpperCase();
+            const rows = document.getElementById('tableBody').getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+                const tdCode = rows[i].getElementsByTagName('td')[0];
+                const tdDesc = rows[i].getElementsByTagName('td')[1];
+                if (rows[i].cells.length === 3 && tdCode && tdDesc && !rows[i].querySelector('[colspan]')) {
+                    const code = (tdCode.textContent || tdCode.innerText).toUpperCase();
+                    const desc = (tdDesc.textContent || tdDesc.innerText).toUpperCase();
+                    rows[i].style.display = (code.indexOf(filter) > -1 || desc.indexOf(filter) > -1) ? "" : "none";
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>
