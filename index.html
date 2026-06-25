@@ -919,6 +919,70 @@ Naar het TIP
 <h2 class="font-display-lg text-display-lg text-primary mb-4">Contactgegevens</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant">Vind hier alle informatie om in contact te komen met Mondzorg Dommelen. Wij staan klaar om uw vragen te beantwoorden.</p>
 </div>
+<!-- Contactformulier -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 bg-surface border border-surface-container-highest rounded-xl p-8 shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">mail</span>
+Stuur ons een bericht
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Vul het formulier in en wij nemen zo snel mogelijk contact met u op. Voor spoedgevallen buiten openingstijden belt u <a class="text-primary hover:underline" href="#spoeddienst">0900-1515</a>.</p>
+<form id="contactForm" class="space-y-5">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-background" for="c-naam">Naam *</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md text-on-background placeholder:text-outline" id="c-naam" name="naam" required type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-background" for="c-email">E-mailadres *</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md text-on-background placeholder:text-outline" id="c-email" name="email" required type="email"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-background" for="c-tel">Telefoonnummer</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md text-on-background placeholder:text-outline" id="c-tel" name="telefoon" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-background" for="c-onderwerp">Onderwerp</label>
+<select class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md text-on-background" id="c-onderwerp" name="onderwerp">
+<option>Algemene vraag</option>
+<option>Vraag over een afspraak</option>
+<option>Vraag over een rekening</option>
+<option>Inschrijven als patiënt</option>
+<option>Overig</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-background" for="c-bericht">Bericht *</label>
+<textarea class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md text-body-md text-on-background placeholder:text-outline" id="c-bericht" name="bericht" rows="5" required></textarea>
+</div>
+<label class="flex items-start gap-3 font-body-md text-body-md text-on-surface-variant">
+<input class="mt-1 h-4 w-4 rounded border-outline-variant text-primary focus:ring-primary" id="c-akkoord" name="akkoord" required type="checkbox"/>
+<span>Ik ga akkoord met de verwerking van mijn gegevens conform het <a class="text-primary hover:underline" href="privacy.html">privacybeleid</a>. *</span>
+</label>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<button class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-8 py-3 rounded hover:bg-primary-container transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+Verstuur bericht
+</button>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm" id="contactFormHint">Uw bericht wordt geopend in uw e-mailprogramma.</span>
+</div>
+</form>
+</div>
+<!-- Direct contact -->
+<aside class="md:col-span-4 flex flex-col gap-gutter">
+<div class="bg-primary text-on-primary rounded-xl p-6 flex flex-col gap-4 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-on-primary">Liever direct contact?</h3>
+<a class="flex items-center gap-3 font-body-md text-body-md text-on-primary hover:text-inverse-primary transition-colors" href="tel:040-2041221">
+<span class="material-symbols-outlined">call</span>040-2041221
+</a>
+<a class="flex items-center gap-3 font-body-md text-body-md text-on-primary hover:text-inverse-primary transition-colors break-all" href="mailto:info@mondzorgdommelen.nl">
+<span class="material-symbols-outlined">mail</span>info@mondzorgdommelen.nl
+</a>
+<p class="font-body-md text-body-md text-on-primary/80 text-sm pt-2 border-t border-on-primary/15">Telefonisch bereikbaar op werkdagen tijdens onze openingstijden.</p>
+</div>
+</aside>
+</div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 <!-- Main contact info -->
 <div class="md:col-span-8 bg-surface border border-surface-container-highest rounded-xl p-8 shadow-[0_2px_10px_rgba(0,0,0,0.03)] flex flex-col justify-between">
@@ -1241,6 +1305,25 @@ Volgende Stap
             });
             const leeg = document.getElementById('techniekGeenResultaat');
             if (leeg) leeg.classList.toggle('hidden', totaalZichtbaar > 0);
+        });
+    }
+
+    // Contactformulier: open bericht in e-mailprogramma (geen server nodig)
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const f = e.target;
+            const onderwerp = f.onderwerp.value || 'Contactformulier';
+            const subject = encodeURIComponent('Contactformulier: ' + onderwerp);
+            const body = encodeURIComponent(
+                'Naam: ' + f.naam.value + '\n' +
+                'E-mail: ' + f.email.value + '\n' +
+                'Telefoon: ' + (f.telefoon.value || '-') + '\n' +
+                'Onderwerp: ' + onderwerp + '\n\n' +
+                f.bericht.value
+            );
+            window.location.href = 'mailto:info@mondzorgdommelen.nl?subject=' + subject + '&body=' + body;
         });
     }
 </script>
