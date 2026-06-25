@@ -186,6 +186,8 @@ Inschrijven
 <!-- ================= NOTICES (Patiëntenstop + Spoeddienst) ================= -->
 <section class="py-section-padding px-margin-mobile md:px-gutter max-w-container-max mx-auto">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Linkerkolom: Patiëntenstop + KNMT -->
+<div class="flex flex-col gap-8">
 <!-- Patiëntenstop Alert -->
 <div class="bg-error-container border border-error/20 p-6 rounded-xl flex items-start gap-4 shadow-sm">
 <span class="material-symbols-outlined text-error text-3xl mt-1" style="font-variation-settings: 'FILL' 1;">error</span>
@@ -194,16 +196,31 @@ Inschrijven
 <p class="font-body-md text-body-md text-on-error-container">Momenteel ervaren wij een enorme toeloop van nieuwe patiënten, daarom zijn wij genoodzaakt een <strong>patiëntenstop</strong> te hanteren. Wij willen ervoor zorgen dat we een gezond patiëntenbestand hebben, zodat wij nu en in de toekomst de gewenste tandheelkundige zorg kunnen bieden.</p>
 </div>
 </div>
+<!-- KNMT kwaliteitskaart -->
+<div class="bg-surface border border-outline-variant p-6 rounded-xl shadow-sm flex items-start gap-4 flex-grow">
+<span class="material-symbols-outlined text-primary text-3xl mt-1" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Aangesloten bij de KNMT</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Mondzorg Dommelen is aangesloten bij de KNMT (Koninklijke Nederlandse Maatschappij tot Bevordering der Tandheelkunde) en draagt met trots het KNMT-kwaliteitskeurmerk. Dit staat garant voor veilige, professionele en betrouwbare zorg.</p>
+</div>
+</div>
+</div>
 <!-- Spoeddienst Info -->
 <div id="spoeddienst" class="bg-surface border border-outline-variant p-6 rounded-xl shadow-sm">
 <div class="flex items-center gap-3 mb-4">
 <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">medical_services</span>
 <h2 class="font-headline-md text-headline-md text-primary">Spoeddienst</h2>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Buiten onze openingstijden en in het weekend kunt u voor spoedgevallen terecht bij:</p>
-<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/50">
-<p class="font-label-md text-label-md text-primary mb-1">De Tandartsenpost Eindhoven heeft een nieuw telefoonnummer:</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Buiten onze openingstijden en in het weekend kunt u voor spoedgevallen terecht bij de Spoedgevallendienst van Tandartsenpost Eindhoven. Deze is <strong>24/7</strong> bereikbaar:</p>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/50 mb-4">
+<p class="font-label-md text-label-md text-primary mb-1">Tandartsenpost Eindhoven</p>
 <p class="font-headline-md text-headline-md text-error font-bold">0900-1515</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Aalsterweg 108, Eindhoven</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3">De spoedgevallendienst is uitsluitend bedoeld voor zeer dringende spoedgevallen, zoals abcessen, ongevallen, acute zenuwontstekingen en nabloedingen.</p>
+<div class="flex items-start gap-2 bg-error-container/60 p-3 rounded-lg">
+<span class="material-symbols-outlined text-error text-xl mt-0.5" style="font-variation-settings: 'FILL' 1;">badge</span>
+<p class="font-body-md text-body-md text-on-error-container">Neem uw juiste verzekeringsgegevens én voldoende contant geld mee.</p>
 </div>
 </div>
 </div>
@@ -270,7 +287,7 @@ Openingstijden
 <div class="space-y-6">
 <h2 class="font-display-lg text-display-lg text-primary">Onze Praktijk</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant">
-Welkom bij Mondzorg Dommelen, een laagdrempelige en moderne tandartspraktijk in de gemeente Valkenswaard. Met een hecht team van tandartsen, mondhygiënisten en (preventie-)assistentes vinden wij het belangrijk dat u zich bij ons 'thuis' voelt. Sinds de oprichting in 1982 door tandarts H.M.C. Peeters (destijds Tandartspraktijk Peeters) zetten wij ons in voor hoogwaardige tandheelkundige zorg.
+We zijn een laagdrempelige moderne tandartspraktijk met een hecht team van tandartsen, mondhygiënistes en (preventie-)assistentes. We vinden het belangrijk dat patiënten zich 'thuis' voelen in de praktijk. We gaan informeel met onze patiënten om maar tonen wel onze professionaliteit. Patiënten kunnen voor vrijwel iedere tandheelkundige behandeling bij ons terecht. Wij hebben goede samenwerkingsverbanden met uitstekende specialisten in de regio.
 </p>
 <div class="flex gap-4 pt-4">
 <a class="font-label-md text-label-md bg-primary text-on-primary px-6 py-3 rounded hover:bg-primary-container transition-colors inline-block" href="#vacatures">Bekijk Vacatures</a>
@@ -281,6 +298,8 @@ Welkom bij Mondzorg Dommelen, een laagdrempelige en moderne tandartspraktijk in 
 <img class="w-full h-full object-cover" alt="Moderne tandartspraktijk receptie" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXwr0I0SpwZYYRdroEtehO5GyIprM5x2fbouVaB5x1chuX2TDHtOv7kT2AY9Dc12mmiXV4YL8mybBfX2J0MlUNRV3Yuztp4RVpKNqOnUqKcDlVI8j9fUA2ohctLwlKlqgvXGQTAHg5S0j1QwYdI9JcH8KghNsQP4s9oVu2dBPc7y76ajRATQ6syT3GPn2y-KMlpL0BPMaj_me0WzImFIgvgsZ5J9-vumFfZLwOSgIt5tgRKr3r7zt98zjBOPp2nYOYruRgOTs6nMFh"/>
 </div>
 </div>
+<!-- Informatiekaarten (gelijke tussenruimte) -->
+<div class="space-y-6">
 <!-- Onze zorg & pijnklachten -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <div class="md:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-8 space-y-4">
@@ -289,7 +308,7 @@ Welkom bij Mondzorg Dommelen, een laagdrempelige en moderne tandartspraktijk in 
 <h3 class="font-headline-md text-headline-md">Onze zorg</h3>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant">
-U kunt voor vrijwel iedere tandheelkundige behandeling bij ons terecht. Waar nodig verwijzen wij u door naar een specialist. Ons aanbod omvat onder andere:
+Ons brede zorgaanbod omvat onder andere:
 </p>
 <ul class="grid sm:grid-cols-3 gap-3 mt-2">
 <li class="flex items-center gap-2 font-body-md text-body-md text-on-surface-variant"><span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>Reguliere tandheelkundige zorg</li>
@@ -348,6 +367,7 @@ Al onze behandelaars zijn bevoegd en opgenomen in het Kwaliteitsregister voor ta
 </div>
 <div class="w-48 h-auto opacity-80 hover:opacity-100 transition-opacity mix-blend-multiply">
 <img alt="Alles over het gebit" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLsrZ7Op7A0gCIlLsubhplK6T8KJb9GDEo7YkVl1BSd_pNLJ0COryq1WgNaULnrZbJPrwWcGI_-ryvShjzziZtRbfDLVzOtPvej2lVu5pS2Lod3ck2Ah5NwDNTgpZ5h1YjYLA39Cj10oFPfc8IbyveFEpWzyaZsUTKu4rT1Lz-aP86ze3liy4gvxfh8yXOepw2WtLAaMi-yfuaap9XhvwA2ZrUawoN9jZdVuSDXfcr7dnYfuQET9T2zcB0I"/>
+</div>
 </div>
 </div>
 <!-- Vacatures -->
