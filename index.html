@@ -6,6 +6,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Mondzorg Dommelen - Tandartspraktijk Valkenswaard</title>
 <meta name="description" content="Mondzorg Dommelen is een moderne, laagdrempelige tandartspraktijk in Valkenswaard. Tandartsen, mondhygiënistes en preventie-assistentes onder één dak."/>
+<link rel="icon" type="image/png" href="images/logo.png"/>
+<link rel="apple-touch-icon" href="images/logo.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -114,14 +116,13 @@
 
 <!-- ================= TopNavBar ================= -->
 <header class="bg-surface-container-lowest border-b border-outline-variant shadow-sm w-full sticky top-0 z-50 transition-shadow duration-300" id="main-header">
-<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+<div class="flex justify-between items-center gap-4 w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
 <!-- Brand Logo -->
-<a aria-label="Mondzorg Dommelen Home" class="flex items-center gap-2 font-bold text-primary" href="#home">
-<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">dentistry</span>
-<span class="font-display-lg text-headline-md md:text-headline-md">Mondzorg Dommelen</span>
+<a aria-label="Mondzorg Dommelen Home" class="flex items-center shrink-0" href="#home">
+<img src="images/logo.png" alt="Mondzorg Dommelen — Tandartsenpraktijk" class="h-12 md:h-14 w-auto"/>
 </a>
 <!-- Navigation Links (Desktop) -->
-<nav class="hidden lg:flex space-x-6 h-full items-center">
+<nav class="hidden xl:flex flex-1 justify-center items-center gap-x-4 h-full whitespace-nowrap">
 <a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#over-ons">Over ons</a>
 <a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#onze-praktijk">Onze praktijk</a>
 <a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#team">Team</a>
@@ -132,17 +133,17 @@
 <a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors flex items-center h-full font-label-md text-label-md" href="#nieuws">Nieuws</a>
 </nav>
 <!-- Actions -->
-<div class="hidden md:flex items-center gap-4">
-<a class="font-label-md text-label-md text-primary border border-primary px-4 py-2 rounded hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors" href="#spoeddienst">Spoed</a>
-<a class="font-label-md text-label-md bg-primary text-on-primary px-4 py-2 rounded hover:bg-primary-container transition-colors" href="#inschrijven">Inschrijven</a>
+<div class="hidden xl:flex items-center gap-3 shrink-0">
+<a class="font-label-md text-label-md text-primary border border-primary px-4 py-2 rounded hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors whitespace-nowrap" href="#spoeddienst">Spoed</a>
+<a class="font-label-md text-label-md bg-primary text-on-primary px-4 py-2 rounded hover:bg-primary-container transition-colors whitespace-nowrap" href="#inschrijven">Inschrijven</a>
 </div>
 <!-- Mobile Menu Button -->
-<button aria-label="Open menu" id="mobileMenuBtn" class="lg:hidden p-2 text-on-surface hover:text-primary transition-colors">
+<button aria-label="Open menu" id="mobileMenuBtn" class="xl:hidden p-2 text-on-surface hover:text-primary transition-colors">
 <span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
 <!-- Mobile Menu Panel -->
-<nav id="mobileMenu" class="hidden lg:hidden bg-surface-container-lowest border-t border-outline-variant px-margin-mobile py-4 flex-col gap-1">
+<nav id="mobileMenu" class="hidden xl:hidden bg-surface-container-lowest border-t border-outline-variant px-margin-mobile py-4 flex-col gap-1">
 <a class="block py-2 text-on-surface-variant font-medium hover:text-primary" href="#over-ons">Over ons</a>
 <a class="block py-2 text-on-surface-variant font-medium hover:text-primary" href="#onze-praktijk">Onze praktijk</a>
 <a class="block py-2 text-on-surface-variant font-medium hover:text-primary" href="#team">Team</a>
@@ -1103,9 +1104,8 @@ Volgende Stap
 <footer class="bg-surface-container-high w-full pt-12 border-t border-outline-variant/50">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto mb-8">
 <div class="flex flex-col gap-4">
-<a class="font-headline-md text-headline-md font-bold text-primary flex items-center gap-2" href="#home">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">dentistry</span>
-Mondzorg Dommelen
+<a class="flex items-center" href="#home">
+<img src="images/logo.png" alt="Mondzorg Dommelen — Tandartsenpraktijk" class="h-16 w-auto"/>
 </a>
 <p class="font-body-md text-body-md text-on-secondary-container">Moderne en laagdrempelige tandartspraktijk in Valkenswaard.</p>
 </div>
