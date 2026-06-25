@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!-- Mondzorg Dommelen - One Page Website -->
+<html class="light" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacybeleid - Mondzorg Dommelen</title>
+<meta name="description" content="Mondzorg Dommelen is een moderne, laagdrempelige tandartspraktijk in Valkenswaard. Tandartsen, mondhygiënistes en preventie-assistentes onder één dak."/>
+<link rel="icon" type="image/png" href="images/logo.png"/>
+<link rel="apple-touch-icon" href="images/logo.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                "colors": {
+                    "on-secondary-container": "#596578",
+                    "surface": "#f9f9f9",
+                    "secondary": "#535f72",
+                    "surface-container": "#eeeeee",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#a7c8ff",
+                    "inverse-surface": "#2f3131",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#f9f9f9",
+                    "on-primary-container": "#799dd6",
+                    "tertiary-fixed": "#e0e3e6",
+                    "on-tertiary-fixed-variant": "#43474a",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "primary": "#001e40",
+                    "secondary-fixed-dim": "#bbc7dd",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "surface-dim": "#dadada",
+                    "outline-variant": "#c3c6d1",
+                    "surface-container-high": "#e8e8e8",
+                    "on-background": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#3c4759",
+                    "on-tertiary-container": "#999c9f",
+                    "primary-fixed": "#d5e3ff",
+                    "on-tertiary-fixed": "#181c1e",
+                    "outline": "#737780",
+                    "on-secondary-fixed": "#101c2c",
+                    "primary-container": "#003366",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#c3c7ca",
+                    "tertiary-container": "#303436",
+                    "secondary-fixed": "#d7e3fa",
+                    "secondary-container": "#d7e3fa",
+                    "surface-container-low": "#f3f3f4",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary": "#1b1f21",
+                    "surface-tint": "#3a5f94",
+                    "on-surface-variant": "#43474f",
+                    "on-primary-fixed": "#001b3c",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#1a1c1c",
+                    "surface-variant": "#e2e2e2"
+                },
+                "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+                "spacing": {
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "section-padding": "80px",
+                    "margin-mobile": "16px"
+                },
+                "fontFamily": {
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+                },
+                "fontSize": {
+                    "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #1a1c1c; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Hanken Grotesk', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .material-symbols-outlined[data-weight="fill"] { font-variation-settings: 'FILL' 1; }
+    html { scroll-behavior: smooth; }
+    /* offset for sticky header on anchor jumps */
+    section[id], div[id].anchor-target { scroll-margin-top: 96px; }
+</style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- Eenvoudige header voor subpagina -->
+<header class="bg-surface-container-lowest border-b border-outline-variant shadow-sm w-full sticky top-0 z-50">
+<div class="flex justify-between items-center gap-4 w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+<a aria-label="Mondzorg Dommelen Home" class="flex items-center shrink-0" href="index.html">
+<img src="images/logo.png" alt="Mondzorg Dommelen Tandartsenpraktijk" class="h-12 md:h-14 w-auto"/>
+</a>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary border border-primary px-4 py-2 rounded hover:bg-surface-container-low transition-colors" href="index.html">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+Terug naar de website
+</a>
+</div>
+</header>
+<main class="w-full max-w-4xl mx-auto px-margin-mobile md:px-gutter py-section-padding">
+<div class="mb-12">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Privacybeleid &amp; Algemene Voorwaarden</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Transparantie in hoe wij met uw gegevens omgaan.</p>
+</div>
+<div class="space-y-10">
+<section>
+<h2 class="font-headline-md text-headline-md text-primary mb-3">Persoonsgegevens die wij verwerken</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Wij verwerken uw persoonsgegevens omdat u gebruik maakt van onze diensten en/of deze zelf aan ons verstrekt. Dit omvat:</p>
+<ul class="list-disc pl-5 mt-2 space-y-1 font-body-md text-body-md text-on-surface-variant">
+<li>Voor- en achternaam, geslacht, geboortedatum</li>
+<li>Adresgegevens, telefoonnummer, e-mailadres</li>
+<li>Overige persoonsgegevens (bijv. profiel aanmaken, correspondentie)</li>
+<li>Gegevens over gezondheid, BSN-nummer</li>
+</ul>
+</section>
+<section>
+<h2 class="font-headline-md text-headline-md text-primary mb-3">Doel en grondslag verwerking</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Wij verwerken uw gegevens voor: afhandelen van betalingen, contact opnemen indien nodig voor dienstverlening, leveren van goederen/diensten en wettelijke verplichtingen (zoals belastingaangifte en dossierplicht Wet op de geneeskundige behandelovereenkomst (WGBO)).</p>
+</section>
+<section>
+<h2 class="font-headline-md text-headline-md text-primary mb-3">Bewaartermijnen &amp; delen van gegevens</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3"><strong>Bewaartermijn:</strong> Wij bewaren uw gegevens niet langer dan strikt nodig of wettelijk verplicht (standaard 20 jaar na laatste wijziging, langer indien medisch relevant).</p>
+<p class="font-body-md text-body-md text-on-surface-variant"><strong>Delen met derden:</strong> Wij verkopen uw gegevens niet en verstrekken deze uitsluitend ter uitvoering van onze overeenkomst met u of om te voldoen aan een wettelijke verplichting. Met bedrijven die uw gegevens verwerken in onze opdracht, sluiten wij een bewerkersovereenkomst (zoals een factoringsmaatschappij of tandtechnisch laboratorium).</p>
+</section>
+<section>
+<h2 class="font-headline-md text-headline-md text-primary mb-3">Uw rechten &amp; beveiliging</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3">U heeft recht op inzage, correctie of verwijdering van uw gegevens, evenals het recht op dataportabiliteit. Verzoeken kunt u sturen naar <a class="text-primary hover:underline" href="mailto:info@mondzorgdommelen.nl">info@mondzorgdommelen.nl</a> (wij vragen een kopie ID ter verificatie, maak BSN en foto zwart).</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Wij nemen passende maatregelen om misbruik, verlies en ongeautoriseerde toegang tegen te gaan. Onze website gebruikt betrouwbare TLS-certificaten.</p>
+</section>
+</div>
+</main>
+<!-- ================= FOOTER ================= -->
+<footer class="bg-surface-container-high w-full pt-12 border-t border-outline-variant/50">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto mb-8">
+<div class="flex flex-col gap-4">
+<a class="flex items-center" href="index.html">
+<img src="images/logo.png" alt="Mondzorg Dommelen — Tandartsenpraktijk" class="h-16 w-auto"/>
+</a>
+<p class="font-body-md text-body-md text-on-secondary-container">Moderne en laagdrempelige tandartspraktijk in Valkenswaard.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-label-md text-label-md text-primary mb-2">Contact</h4>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="index.html#contact">Helenadal 28, Valkenswaard</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="tel:040-2041221">040-2041221</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors break-all" href="mailto:info@mondzorgdommelen.nl">info@mondzorgdommelen.nl</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-label-md text-label-md text-primary mb-2">Informatie</h4>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="index.html#contact">Openingstijden</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="index.html#spoeddienst">Spoeddienst</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="index.html#tarieven">Tarieven</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="index.html#betalen">Betalen</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors" href="privacy.html">Privacybeleid</a>
+</div>
+<div class="flex flex-col gap-2 items-start md:items-end">
+<h4 class="font-label-md text-label-md text-primary mb-2">Kwaliteit</h4>
+<div class="bg-surface p-2 rounded border border-outline-variant">
+<span class="font-label-md text-label-md text-primary">KNMT Kwaliteitskeurmerk</span>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto border-t border-outline-variant/30 py-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">© 2024 Mondzorg Dommelen. Alle rechten voorbehouden.</p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary text-sm" href="privacy.html">Privacybeleid</a>
+<a class="text-on-surface-variant hover:text-primary text-sm" href="index.html#">Cookiebeleid</a>
+</div>
+</div>
+</footer>
+</body>
+</html>
