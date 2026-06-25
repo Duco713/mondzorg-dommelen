@@ -570,55 +570,122 @@ Stuur je cv
 
 <!-- ================= TARIEVEN ================= -->
 <section id="tarieven" class="w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-padding">
-<div class="mb-12 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6">
-<div class="max-w-2xl">
-<h2 class="font-display-lg text-display-lg text-primary mb-4">Tarieven 2024</h2>
+<div class="mb-10 max-w-3xl">
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Tarieven</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant">
-Hier vindt u een overzicht van de door de NZa (Nederlandse Zorgautoriteit) vastgestelde maximumtarieven voor tandheelkundige zorg, geldig vanaf 1 januari 2024.
+De tarieven voor tandheelkundige zorg zijn maximumtarieven die jaarlijks worden vastgesteld door de Nederlandse Zorgautoriteit (NZa). Deze codes en bedragen zijn voor elke tandartspraktijk in Nederland gelijk en gelden vanaf 1 januari 2026.
 </p>
 </div>
-<div class="w-full md:w-auto flex flex-col sm:flex-row gap-4">
-<div class="relative w-full sm:w-80">
+<!-- Uitleg + NZa-link + verzekering -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="md:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-8 flex flex-col">
+<div class="flex items-center gap-3 text-primary mb-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<h3 class="font-headline-md text-headline-md">Officiële tarievenlijst (NZa)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+De volledige lijst met prestaties, codes en tarieven vindt u bij de Nederlandse Zorgautoriteit. Bij sommige behandelingen komen daar materiaal- en techniekkosten bij; een overzicht daarvan vindt u hieronder. Heeft u vragen over een tarief of wilt u vooraf een begroting? Neem gerust <a class="text-primary hover:underline" href="#contact">contact</a> met ons op.
+</p>
+<a class="mt-auto inline-flex items-center gap-2 font-label-md text-label-md bg-primary text-on-primary px-6 py-3 rounded hover:bg-primary-container transition-colors self-start" href="https://www.nza.nl/zorgsectoren/mondzorg" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined">open_in_new</span>
+Bekijk de NZa-tarieven
+</a>
+</div>
+<div class="bg-primary text-on-primary rounded-xl p-8 flex flex-col justify-center gap-3 shadow-sm">
+<span class="material-symbols-outlined text-inverse-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">handshake</span>
+<h3 class="font-headline-md text-headline-md text-on-primary">Uw verzekering</h3>
+<p class="font-body-md text-body-md text-on-primary/90">
+Voor de techniekkosten hebben wij afspraken met de CZ-groep en VGZ-groep. Check altijd bij uw zorgverzekeraar wat u vergoed krijgt.
+</p>
+</div>
+</div>
+<!-- Materiaal- en techniekkosten -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+<div class="max-w-2xl">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-2">Materiaal- en techniekkosten</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Bij bepaalde behandelingen worden aanvullende materiaal- en techniekkosten in rekening gebracht. Onderstaand overzicht toont de meest voorkomende behandelingen in onze praktijk. U ontvangt vooraf altijd een individuele prijsopgave; aan dit overzicht kunnen geen rechten worden ontleend.</p>
+</div>
+<div class="relative w-full sm:w-72 shrink-0">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors font-body-md text-on-surface" id="searchInput" placeholder="Zoek op code of behandeling..." type="text"/>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors font-body-md text-on-surface" id="searchInput" placeholder="Zoek op behandeling of code..." type="text"/>
 </div>
-</div>
-</div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 mb-12">
-<p class="font-body-md text-body-md text-on-surface">
-De tandheelkundige tarieven in Nederland worden jaarlijks vastgesteld door de Nederlandse Zorgautoriteit (NZa). Dit zijn maximumtarieven; iedere tandartspraktijk hanteert dezelfde codes en bedragen. Hieronder ziet u een aantal veelvoorkomende behandelcodes. Gebruik de zoekbalk om snel een specifieke code of behandeling te vinden. Heeft u vragen over een tarief of een begroting voor een grotere behandeling? Neem dan gerust contact met ons op.
-</p>
 </div>
 <div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
 <div class="overflow-x-auto">
-<table class="w-full text-left border-collapse" id="tarievenTable">
+<table class="w-full text-left border-collapse" id="techniekTable">
 <thead>
 <tr class="bg-surface-container-low border-b border-outline-variant">
-<th class="py-4 px-6 font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider w-24">Code</th>
-<th class="py-4 px-6 font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Omschrijving Behandeling</th>
-<th class="py-4 px-6 font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider text-right w-32">Tarief (€)</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Behandeling</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider w-32">Code</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider text-right w-48">Prijsindicatie (van/tot)</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-outline-variant font-body-md text-body-md" id="tableBody">
-<tr class="hover:bg-surface-container-low transition-colors group">
-<td class="py-4 px-6 text-primary font-medium">C001</td>
-<td class="py-4 px-6 text-on-surface-variant group-hover:text-on-surface transition-colors">Consult voor een periodieke controle</td>
-<td class="py-4 px-6 text-right font-medium text-on-surface">€ 26,75</td>
-</tr>
-<tr class="hover:bg-surface-container-low transition-colors group">
-<td class="py-4 px-6 text-primary font-medium">C002</td>
-<td class="py-4 px-6 text-on-surface-variant group-hover:text-on-surface transition-colors">Consult voor een probleemgericht onderzoek</td>
-<td class="py-4 px-6 text-right font-medium text-on-surface">€ 26,75</td>
-</tr>
-<tr class="hover:bg-surface-container-low transition-colors group bg-surface-container-low/30">
-<td class="py-3 px-6 text-on-surface-variant text-sm italic text-center" colspan="3">
-Gebruik de zoekbalk hierboven om specifieke behandelingen uit de volledige lijst te vinden.
-</td>
-</tr>
+<tbody>
+<tr class="bg-surface-container-low/60"><th colspan="3" class="py-3 px-6 font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Kronen en bruggen (R08-R90)</th></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Drievlaksinlay, keramisch materiaal</td><td class="py-3 px-6 text-primary font-medium">R13</td><td class="py-3 px-6 text-right text-on-surface">€ 150 tot € 200</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Drievlaksinlay, edelmetaal</td><td class="py-3 px-6 text-primary font-medium">R13</td><td class="py-3 px-6 text-right text-on-surface">€ 150 tot € 200</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Composiet kroon</td><td class="py-3 px-6 text-primary font-medium">R24</td><td class="py-3 px-6 text-right text-on-surface">€ 85 tot € 170</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Volledig keramische kroon</td><td class="py-3 px-6 text-primary font-medium">R24</td><td class="py-3 px-6 text-right text-on-surface">€ 200 tot € 215</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Keramisch/porselein kroon</td><td class="py-3 px-6 text-primary font-medium">R24</td><td class="py-3 px-6 text-right text-on-surface">€ 200 tot € 215</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Metaal/porselein kroon</td><td class="py-3 px-6 text-primary font-medium">R24</td><td class="py-3 px-6 text-right text-on-surface">€ 200 tot € 215</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Goud/porselein kroon</td><td class="py-3 px-6 text-primary font-medium">R24</td><td class="py-3 px-6 text-right text-on-surface">€ 200 tot € 215</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Verschroefbare kroon op implantaten</td><td class="py-3 px-6 text-primary font-medium">R24</td><td class="py-3 px-6 text-right text-on-surface">€ 600 tot € 650</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Gecementeerde kroon op implantaten</td><td class="py-3 px-6 text-primary font-medium">R24</td><td class="py-3 px-6 text-right text-on-surface">€ 600 tot € 650</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Brugtussendeel, keramisch</td><td class="py-3 px-6 text-primary font-medium">R40, R45</td><td class="py-3 px-6 text-right text-on-surface">€ 210 tot € 220</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Brugtussendeel, metaal/porselein</td><td class="py-3 px-6 text-primary font-medium">R40, R45</td><td class="py-3 px-6 text-right text-on-surface">€ 210 tot € 220</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Brugtussendeel, goud/porselein</td><td class="py-3 px-6 text-primary font-medium">R40, R45</td><td class="py-3 px-6 text-right text-on-surface">€ 210 tot € 220</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Plakbrug (etsbrug)</td><td class="py-3 px-6 text-primary font-medium">R60, R61</td><td class="py-3 px-6 text-right text-on-surface">€ 180 tot € 250</td></tr>
+</tbody>
+<tbody>
+<tr class="bg-surface-container-low/60"><th colspan="3" class="py-3 px-6 font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Kunstgebitten (P01-P79)</th></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Gedeeltelijk kunstgebit, 1 t/m 4 elementen</td><td class="py-3 px-6 text-primary font-medium">P10, P15</td><td class="py-3 px-6 text-right text-on-surface">€ 230 tot € 245</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Gedeeltelijk kunstgebit, 5 t/m 13 elementen</td><td class="py-3 px-6 text-primary font-medium">P10, P15</td><td class="py-3 px-6 text-right text-on-surface">€ 300 tot € 320</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Frame kunstgebit, 1 t/m 4 elementen</td><td class="py-3 px-6 text-primary font-medium">P34, P35</td><td class="py-3 px-6 text-right text-on-surface">€ 450 tot € 500</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Frame kunstgebit, 5 t/m 13 elementen</td><td class="py-3 px-6 text-primary font-medium">P34, P35</td><td class="py-3 px-6 text-right text-on-surface">€ 450 tot € 500</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Volledig kunstgebit, bovenkaak</td><td class="py-3 px-6 text-primary font-medium">P21, P25, P30</td><td class="py-3 px-6 text-right text-on-surface">€ 300</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Volledig kunstgebit, onderkaak</td><td class="py-3 px-6 text-primary font-medium">P21, P25, P30</td><td class="py-3 px-6 text-right text-on-surface">€ 300 tot € 350</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Volledig kunstgebit, boven- en onderkaak</td><td class="py-3 px-6 text-primary font-medium">P21, P25, P30</td><td class="py-3 px-6 text-right text-on-surface">€ 600 tot € 650</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Opvullen kunstgebit</td><td class="py-3 px-6 text-primary font-medium">P01-P04, P70</td><td class="py-3 px-6 text-right text-on-surface">€ 75 tot € 150</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Opvullen kunstgebit met weekblijvende basis</td><td class="py-3 px-6 text-primary font-medium">P01-P04, P70</td><td class="py-3 px-6 text-right text-on-surface">€ 75 tot € 150</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Reparatie volledig kunstgebit</td><td class="py-3 px-6 text-primary font-medium">P07, P08</td><td class="py-3 px-6 text-right text-on-surface">€ 50 tot € 100</td></tr>
+</tbody>
+<tbody>
+<tr class="bg-surface-container-low/60"><th colspan="3" class="py-3 px-6 font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Consultatie en diagnostiek (C11-C90)</th></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Studiemodellen t.b.v. behandelplan (gebitsmodel)</td><td class="py-3 px-6 text-primary font-medium">C29</td><td class="py-3 px-6 text-right text-on-surface">€ 15 tot € 45</td></tr>
+</tbody>
+<tbody>
+<tr class="bg-surface-container-low/60"><th colspan="3" class="py-3 px-6 font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Preventieve mondzorg (M01-M61)</th></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Mondbeschermer</td><td class="py-3 px-6 text-primary font-medium">M61</td><td class="py-3 px-6 text-right text-on-surface">€ 90 tot € 100</td></tr>
+</tbody>
+<tbody>
+<tr class="bg-surface-container-low/60"><th colspan="3" class="py-3 px-6 font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Kaakgewrichtsbehandelingen (G01-G73)</th></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Opbeetplaat</td><td class="py-3 px-6 text-primary font-medium">G69</td><td class="py-3 px-6 text-right text-on-surface">€ 90 tot € 130</td></tr>
+</tbody>
+<tbody>
+<tr class="bg-surface-container-low/60"><th colspan="3" class="py-3 px-6 font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Wortelkanaalbehandelingen (E01-E98)</th></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Uitwendig bleken per kaak (bleekhoes en materialen)</td><td class="py-3 px-6 text-primary font-medium">E97</td><td class="py-3 px-6 text-right text-on-surface">€ 95 tot € 150</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Plaatsen wortelkanaalstift</td><td class="py-3 px-6 text-primary font-medium">E</td><td class="py-3 px-6 text-right text-on-surface">€ 10 tot € 15</td></tr>
+</tbody>
+<tbody>
+<tr class="bg-surface-container-low/60"><th colspan="3" class="py-3 px-6 font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Implantaten (J01-J98)</th></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Volledig klikgebit op 2 drukknoppen/magneten</td><td class="py-3 px-6 text-primary font-medium">J50</td><td class="py-3 px-6 text-right text-on-surface">€ 900 tot € 1.010</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Volledig klikgebit op 4 drukknoppen/magneten</td><td class="py-3 px-6 text-primary font-medium">J50</td><td class="py-3 px-6 text-right text-on-surface">€ 1.500 tot € 1.550</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Volledig klikgebit op 1 staaf</td><td class="py-3 px-6 text-primary font-medium">J50</td><td class="py-3 px-6 text-right text-on-surface">€ 1.600 tot € 1.650</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Volledig klikgebit op 2 staven</td><td class="py-3 px-6 text-primary font-medium">J50</td><td class="py-3 px-6 text-right text-on-surface">€ 2.200 tot € 2.500</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Volledig klikgebit op meer dan 2 staven</td><td class="py-3 px-6 text-primary font-medium">J50</td><td class="py-3 px-6 text-right text-on-surface">€ 3.000 tot € 3.800</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Klikgebit onderkaak op 2 drukknoppen/magneten</td><td class="py-3 px-6 text-primary font-medium">J51</td><td class="py-3 px-6 text-right text-on-surface">€ 650 tot € 700</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Klikgebit onderkaak op 4 drukknoppen/magneten</td><td class="py-3 px-6 text-primary font-medium">J51</td><td class="py-3 px-6 text-right text-on-surface">€ 900 tot € 975</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Klikgebit onderkaak op 1 staaf</td><td class="py-3 px-6 text-primary font-medium">J51</td><td class="py-3 px-6 text-right text-on-surface">€ 1.600 tot € 1.700</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Klikgebit onderkaak op 2 staven</td><td class="py-3 px-6 text-primary font-medium">J51</td><td class="py-3 px-6 text-right text-on-surface">€ 2.000 tot € 2.200</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Klikgebit onderkaak op meer dan 2 staven</td><td class="py-3 px-6 text-primary font-medium">J51</td><td class="py-3 px-6 text-right text-on-surface">€ 3.000 tot € 4.000</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Klikgebit bovenkaak op 2 drukknoppen/magneten</td><td class="py-3 px-6 text-primary font-medium">J52</td><td class="py-3 px-6 text-right text-on-surface">€ 650 tot € 700</td></tr>
+<tr data-item class="border-t border-outline-variant/40"><td class="py-3 px-6 text-on-surface-variant">Klikgebit bovenkaak op 4 drukknoppen/magneten</td><td class="py-3 px-6 text-primary font-medium">J52</td><td class="py-3 px-6 text-right text-on-surface">€ 900 tot € 975</td></tr>
 </tbody>
 </table>
 </div>
+<div class="hidden p-6 text-center text-on-surface-variant text-sm italic" id="techniekGeenResultaat">Geen behandelingen gevonden voor uw zoekopdracht.</div>
 </div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-4">Bedragen zijn prijsindicaties en gelden vanaf 1 januari 2026. Aan dit overzicht kunnen geen rechten worden ontleend.</p>
 </section>
 
 <!-- ================= ZORG & VERZEKERING ================= -->
@@ -1119,21 +1186,25 @@ Volgende Stap
         });
     });
 
-    // Tarieven table search
+    // Materiaal- en techniekkosten: zoeken/filteren
     const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('keyup', function () {
-            const filter = this.value.toUpperCase();
-            const rows = document.getElementById('tableBody').getElementsByTagName('tr');
-            for (let i = 0; i < rows.length; i++) {
-                const tdCode = rows[i].getElementsByTagName('td')[0];
-                const tdDesc = rows[i].getElementsByTagName('td')[1];
-                if (rows[i].cells.length === 3 && tdCode && tdDesc && !rows[i].querySelector('[colspan]')) {
-                    const code = (tdCode.textContent || tdCode.innerText).toUpperCase();
-                    const desc = (tdDesc.textContent || tdDesc.innerText).toUpperCase();
-                    rows[i].style.display = (code.indexOf(filter) > -1 || desc.indexOf(filter) > -1) ? "" : "none";
-                }
-            }
+    const techniekTable = document.getElementById('techniekTable');
+    if (searchInput && techniekTable) {
+        searchInput.addEventListener('input', function () {
+            const filter = this.value.toLowerCase().trim();
+            let totaalZichtbaar = 0;
+            techniekTable.querySelectorAll('tbody').forEach(function (tb) {
+                let zichtbaar = 0;
+                tb.querySelectorAll('tr[data-item]').forEach(function (row) {
+                    const match = row.textContent.toLowerCase().indexOf(filter) > -1;
+                    row.style.display = match ? '' : 'none';
+                    if (match) zichtbaar++;
+                });
+                tb.style.display = zichtbaar ? '' : 'none';
+                totaalZichtbaar += zichtbaar;
+            });
+            const leeg = document.getElementById('techniekGeenResultaat');
+            if (leeg) leeg.classList.toggle('hidden', totaalZichtbaar > 0);
         });
     }
 </script>
