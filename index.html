@@ -117,6 +117,11 @@
     @media (prefers-reduced-motion: reduce) {
         .reveal-on .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
     }
+    /* Hover-lift: kaarten met een hover-schaduw komen licht omhoog */
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+        [class*="hover:shadow"][class*="rounded-xl"] { transition: transform .25s ease, box-shadow .25s ease; }
+        [class*="hover:shadow"][class*="rounded-xl"]:hover { transform: translateY(-4px); }
+    }
 </style>
 <script>/* zet reveal-modus aan vóór de body rendert, zo voorkomen we flikkeren */ document.documentElement.classList.add('reveal-on');</script>
 </head>
