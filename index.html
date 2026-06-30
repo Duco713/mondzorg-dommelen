@@ -122,6 +122,17 @@
         [class*="hover:shadow"][class*="rounded-xl"] { transition: transform .25s ease, box-shadow .25s ease; }
         [class*="hover:shadow"][class*="rounded-xl"]:hover { transform: translateY(-4px); }
     }
+    /* Hero: titel, tekst en knoppen faden in cascade in bij het laden */
+    @keyframes heroIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .hero-anim { opacity: 0; animation: heroIn .8s cubic-bezier(.16,1,.3,1) forwards; }
+    .hero-d1 { animation-delay: .15s; }
+    .hero-d2 { animation-delay: .30s; }
+    .hero-d3 { animation-delay: .45s; }
+    @media (prefers-reduced-motion: reduce) {
+        .hero-anim { opacity: 1; animation: none; }
+    }
+    /* Scrollspy: actieve sectie-link in de header */
+    header nav > a.nav-active { color: #001e40; font-weight: 700; box-shadow: inset 0 -3px 0 0 #001e40; }
 </style>
 <script>/* zet reveal-modus aan vóór de body rendert, zo voorkomen we flikkeren */ document.documentElement.classList.add('reveal-on');</script>
 </head>
@@ -180,9 +191,9 @@
 </div>
 <div class="relative z-10 text-center px-margin-mobile md:px-gutter max-w-container-max mx-auto">
 <div class="bg-surface/90 backdrop-blur-sm p-8 rounded-xl border border-outline-variant shadow-sm inline-block max-w-2xl">
-<h1 class="font-display-lg text-display-lg text-primary mb-4">Welkom bij Mondzorg Dommelen!</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Wij zijn een laagdrempelige moderne tandartspraktijk met een hecht team van tandartsen, mondhygiënistes en (preventie-)assistentes. We vinden het belangrijk dat patiënten zich 'thuis' voelen in de praktijk.</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<h1 class="hero-anim hero-d1 font-display-lg text-display-lg text-primary mb-4">Welkom bij Mondzorg Dommelen!</h1>
+<p class="hero-anim hero-d2 font-body-lg text-body-lg text-on-surface-variant mb-8">Wij zijn een laagdrempelige moderne tandartspraktijk met een hecht team van tandartsen, mondhygiënistes en (preventie-)assistentes. We vinden het belangrijk dat patiënten zich 'thuis' voelen in de praktijk.</p>
+<div class="hero-anim hero-d3 flex flex-col sm:flex-row gap-4 justify-center">
 <a class="flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-xl hover:bg-primary-container transition-colors shadow-sm" href="#contact">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">call</span>
 Contact
@@ -1362,6 +1373,28 @@ Volgende Stap
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
         els.forEach(el => io.observe(el));
+    })();
+
+    // Scrollspy: markeer in de header welke sectie in beeld is
+    (function () {
+        const links = Array.from(document.querySelectorAll('header nav > a[href^="#"]'));
+        if (!links.length) return;
+        const map = {};
+        links.forEach(a => {
+            const id = a.getAttribute('href').slice(1);
+            (map[id] = map[id] || []).push(a);
+        });
+        const sections = Object.keys(map).map(id => document.getElementById(id)).filter(Boolean);
+        if (!sections.length) return;
+        const spy = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    links.forEach(a => a.classList.remove('nav-active'));
+                    (map[entry.target.id] || []).forEach(a => a.classList.add('nav-active'));
+                }
+            });
+        }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
+        sections.forEach(s => spy.observe(s));
     })();
 </script>
 </body>
