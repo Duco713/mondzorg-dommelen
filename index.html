@@ -146,8 +146,11 @@
         #techniekTable td, #techniekTable th { display: block; width: 100%; }
         /* Sectiekop-rijen (Kronen en bruggen, Kunstgebitten, ...) */
         #techniekTable tr > th[colspan] { padding: 14px 16px; }
-        /* Databehandeling-rijen worden een kaartje */
+        /* Databehandeling-rijen worden een kaartje.
+           width:auto (i.p.v. de 100% van de tr-regel hierboven) zodat de 16px
+           marges de kaart binnen het panel houden i.p.v. 'm te breed te maken. */
         #techniekTable tr[data-item] {
+            width: auto;
             border: 1px solid #c3c6d1; border-radius: 10px;
             margin: 10px 16px; padding: 12px 0;
         }
