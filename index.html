@@ -133,6 +133,34 @@
     }
     /* Scrollspy: actieve sectie-link in de header */
     header nav > a.nav-active { color: #001e40; font-weight: 700; box-shadow: inset 0 -3px 0 0 #001e40; }
+    /* Tarieventabel op mobiel: stapel rijen als kaartjes i.p.v. horizontaal scrollen */
+    @media (max-width: 640px) {
+        #techniekTable thead { display: none; }
+        #techniekTable, #techniekTable tbody, #techniekTable tr { display: block; width: 100%; }
+        #techniekTable td, #techniekTable th { display: block; width: 100%; }
+        /* Sectiekop-rijen (Kronen en bruggen, Kunstgebitten, ...) */
+        #techniekTable tr > th[colspan] { padding: 12px 16px; }
+        /* Databehandeling-rijen worden een kaartje */
+        #techniekTable tr[data-item] {
+            border: 1px solid #c3c6d1; border-radius: 10px;
+            margin: 10px 16px; padding: 4px 0; overflow: hidden;
+        }
+        #techniekTable tr[data-item] td {
+            border: none; text-align: left; padding: 4px 16px;
+        }
+        #techniekTable tr[data-item] td:first-child {
+            font-weight: 600; color: #1a1c1c; padding-top: 12px; font-size: 15px;
+        }
+        #techniekTable tr[data-item] td:last-child { padding-bottom: 12px; }
+        #techniekTable tr[data-item] td:nth-child(2)::before,
+        #techniekTable tr[data-item] td:nth-child(3)::before {
+            display: inline-block; min-width: 96px;
+            font-size: 12px; font-weight: 600; text-transform: uppercase;
+            letter-spacing: .04em; color: #737780;
+        }
+        #techniekTable tr[data-item] td:nth-child(2)::before { content: "Code"; }
+        #techniekTable tr[data-item] td:nth-child(3)::before { content: "Prijsindicatie"; }
+    }
 </style>
 <script>/* zet reveal-modus aan vóór de body rendert, zo voorkomen we flikkeren */ document.documentElement.classList.add('reveal-on');</script>
 </head>
