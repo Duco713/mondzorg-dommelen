@@ -194,7 +194,11 @@
 <h1 class="hero-anim hero-d1 font-display-lg text-display-lg text-primary mb-4">Welkom bij Mondzorg Dommelen!</h1>
 <p class="hero-anim hero-d2 font-body-lg text-body-lg text-on-surface-variant mb-8">Wij zijn een laagdrempelige moderne tandartspraktijk met een hecht team van tandartsen, mondhygiënistes en (preventie-)assistentes. We vinden het belangrijk dat patiënten zich 'thuis' voelen in de praktijk.</p>
 <div class="hero-anim hero-d3 flex flex-col sm:flex-row gap-4 justify-center">
-<a class="flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-xl hover:bg-primary-container transition-colors shadow-sm" href="#contact">
+<button type="button" data-triage-open class="flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-xl hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+Moet ik naar de tandarts?
+</button>
+<a class="flex items-center justify-center gap-2 border border-primary text-primary font-label-md text-label-md px-6 py-3 rounded-xl hover:bg-primary-fixed transition-colors" href="#contact">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">call</span>
 Contact
 </a>
@@ -1396,6 +1400,352 @@ Volgende Stap
         }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
         sections.forEach(s => spy.observe(s));
     })();
+</script>
+
+<!-- ================= TRIAGE — "Moet ik naar de tandarts?" ================= -->
+<!-- Zwevende knop: altijd bereikbaar, opent de popup -->
+<button type="button" data-triage-open aria-haspopup="dialog"
+    class="dtri-fab fixed bottom-5 right-5 z-40 flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-5 py-3 rounded-full shadow-lg hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="dtri-fab-tekst">Moet ik naar de tandarts?</span>
+</button>
+
+<!-- Popup / modal -->
+<div id="triage-overlay" class="dtri-overlay" hidden>
+<div class="dtri-dialog" role="dialog" aria-modal="true" aria-labelledby="dtri-title" tabindex="-1">
+<button type="button" class="dtri-close" data-triage-close aria-label="Sluiten">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</button>
+<header class="dtri-head">
+<img src="images/Logo/logo.png" alt="Mondzorg Dommelen" class="dtri-logo"/>
+<span class="dtri-eyebrow">Tandklachten-wijzer</span>
+<h2 class="dtri-title" id="dtri-title">Moet ik naar de tandarts?</h2>
+<p class="dtri-sub">Beantwoord een paar vragen en zie hoe snel u het best contact opneemt.</p>
+</header>
+<div id="dtri-body"></div>
+<footer class="dtri-foot">
+<div class="dtri-nav" id="dtri-nav"></div>
+<p class="dtri-disclaimer">Deze wijzer geeft een indicatie en is geen medisch advies of diagnose. Bij twijfel: bel altijd de praktijk.</p>
+</footer>
+</div>
+</div>
+
+<style>
+.dtri-overlay{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto;background:rgba(0,30,64,.45);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);}
+.dtri-overlay[hidden]{display:none;}
+.dtri-overlay.dtri-open{animation:dtriFade .2s ease;}
+@keyframes dtriFade{from{opacity:0}to{opacity:1}}
+.dtri-dialog{--dtri-ink:#1a1c1c;--dtri-muted:#43474f;--dtri-line:#c3c6d1;--dtri-bg:#fff;--dtri-soft:#f3f3f4;--dtri-accent:#001e40;--dtri-accent-ink:#fff;--dtri-spoed:#ba1a1a;--dtri-snel:#c97a13;--dtri-regulier:#001e40;--dtri-zelfzorg:#2e7d4f;position:relative;width:100%;max-width:560px;margin:auto;background:var(--dtri-bg);border:1px solid var(--dtri-line);border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(0,30,64,.28);color:var(--dtri-ink);line-height:1.5;-webkit-font-smoothing:antialiased;}
+.dtri-dialog *,.dtri-dialog *::before,.dtri-dialog *::after{box-sizing:border-box;}
+.dtri-close{position:absolute;top:12px;right:12px;z-index:1;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:none;border-radius:50%;background:rgba(255,255,255,.7);color:var(--dtri-muted);cursor:pointer;transition:background .15s,color .15s;}
+.dtri-close:hover{background:var(--dtri-soft);color:var(--dtri-ink);}
+.dtri-close:focus-visible{outline:3px solid color-mix(in srgb,var(--dtri-accent) 45%,white);outline-offset:2px;}
+.dtri-head{padding:22px 24px 18px;border-bottom:1px solid var(--dtri-line);background:var(--dtri-soft);}
+.dtri-logo{height:34px;width:auto;margin-bottom:10px;display:block;}
+.dtri-eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--dtri-accent);}
+.dtri-title{margin:6px 0 4px;font-size:22px;line-height:1.2;font-weight:700;font-family:'Hanken Grotesk',sans-serif;}
+.dtri-sub{margin:0;color:var(--dtri-muted);font-size:14.5px;}
+.dtri-vraag,.dtri-uitkomst{padding:22px 24px;outline:none;}
+.dtri-stap{margin:0 0 6px;font-size:12.5px;color:var(--dtri-muted);font-weight:600;}
+.dtri-q{margin:0 0 14px;font-size:18px;line-height:1.3;font-weight:650;font-family:'Hanken Grotesk',sans-serif;}
+.dtri-hint{margin:-8px 0 14px;font-size:13.5px;color:var(--dtri-muted);}
+.dtri-opties{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+.dtri-optie{width:100%;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 16px;font:inherit;font-size:15px;color:var(--dtri-ink);background:var(--dtri-bg);border:1.5px solid var(--dtri-line);border-radius:12px;transition:border-color .15s,background .15s,transform .05s;}
+.dtri-optie svg{color:var(--dtri-muted);flex:none;transition:transform .15s,color .15s;}
+.dtri-optie:hover{border-color:var(--dtri-accent);background:var(--dtri-soft);}
+.dtri-optie:hover svg{color:var(--dtri-accent);transform:translateX(2px);}
+.dtri-optie:active{transform:scale(.995);}
+.dtri-optie:focus-visible{outline:3px solid color-mix(in srgb,var(--dtri-accent) 40%,white);outline-offset:2px;}
+.dtri-uitkomst{border-top:4px solid var(--lvl);}
+.dtri-badge{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.02em;color:#fff;background:var(--lvl);padding:5px 11px;border-radius:999px;}
+.dtri-uittitel{margin:12px 0 6px;font-size:20px;line-height:1.25;font-weight:700;font-family:'Hanken Grotesk',sans-serif;}
+.dtri-uitleg{margin:0 0 16px;color:var(--dtri-muted);font-size:15px;}
+.dtri-watnu-kop{margin:0 0 8px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--dtri-ink);}
+.dtri-watnu{margin:0 0 16px;padding:0;list-style:none;display:grid;gap:9px;}
+.dtri-watnu li{position:relative;padding-left:26px;font-size:14.5px;color:var(--dtri-ink);}
+.dtri-watnu li::before{content:"";position:absolute;left:6px;top:8px;width:7px;height:7px;border-radius:50%;background:var(--lvl);}
+.dtri-112{margin:0 0 16px;padding:11px 13px;font-size:14px;font-weight:600;color:var(--dtri-spoed);background:color-mix(in srgb,var(--dtri-spoed) 8%,white);border:1px solid color-mix(in srgb,var(--dtri-spoed) 30%,white);border-radius:10px;}
+.dtri-cta{margin-top:4px;}
+.dtri-bel{display:inline-flex;align-items:center;gap:10px;width:100%;justify-content:center;text-decoration:none;cursor:pointer;background:var(--dtri-accent);color:var(--dtri-accent-ink);font-size:15.5px;font-weight:650;padding:14px 18px;border-radius:12px;transition:filter .15s;}
+.dtri-bel:hover{filter:brightness(1.15);}
+.dtri-bel:focus-visible{outline:3px solid color-mix(in srgb,var(--dtri-accent) 45%,white);outline-offset:2px;}
+.dtri-spoedtekst{margin:10px 0 0;font-size:13.5px;color:var(--dtri-muted);text-align:center;}
+.dtri-foot{padding:14px 24px 20px;border-top:1px solid var(--dtri-line);}
+.dtri-nav{display:flex;gap:18px;margin-bottom:10px;}
+.dtri-nav:empty{margin-bottom:0;}
+.dtri-link{background:none;border:none;padding:0;cursor:pointer;font:inherit;font-size:14px;font-weight:600;color:var(--dtri-accent);}
+.dtri-link:hover{text-decoration:underline;}
+.dtri-link:focus-visible{outline:2px solid var(--dtri-accent);outline-offset:3px;border-radius:4px;}
+.dtri-disclaimer{margin:0;font-size:12.5px;color:var(--dtri-muted);}
+@media (max-width:480px){.dtri-fab-tekst{display:none;}.dtri-fab{padding:14px;}}
+@media (prefers-reduced-motion:reduce){.dtri-optie,.dtri-optie svg,.dtri-bel,.dtri-overlay.dtri-open{transition:none;animation:none;}}
+</style>
+
+<script>
+(function () {
+    var praktijk = {
+        naam: "Mondzorg Dommelen",
+        telefoon: "040-2041221",
+        spoedtekst: "Buiten openingstijden: bel Tandartsenpost Eindhoven via 0900-1515."
+    };
+
+    var NIVEAUS = {
+        spoed:    { label: "Direct contact opnemen",    kleur: "var(--dtri-spoed)" },
+        snel:     { label: "Bel vandaag",               kleur: "var(--dtri-snel)" },
+        regulier: { label: "Maak een afspraak",         kleur: "var(--dtri-regulier)" },
+        zelfzorg: { label: "Kan meestal even wachten",  kleur: "var(--dtri-zelfzorg)" }
+    };
+
+    var BOOM = {
+        start: { vraag: "Wat is er aan de hand?", opties: [
+            { label: "Een tand is uitgeslagen of afgebroken door een ongeluk of val", next: "trauma" },
+            { label: "Ik heb kies- of tandpijn", next: "pijn" },
+            { label: "Zwelling in mijn gezicht, wang of tandvlees", next: "zwelling" },
+            { label: "Mijn mond bloedt", next: "bloeding" },
+            { label: "Er is iets kapot of los (vulling, kroon, beugel) zonder veel pijn", next: "kapot" },
+            { label: "Lichte klacht: gevoeligheid, aften of geïrriteerd tandvlees", next: "mild" }
+        ]},
+        trauma: { vraag: "Wat is er met de tand gebeurd?", opties: [
+            { label: "De hele tand is eruit geslagen", next: "trauma_uit" },
+            { label: "Een stuk is afgebroken of de tand zit los, maar zit er nog", next: "trauma_deel" },
+            { label: "Klap op kaak of mond; ik kan niet goed dichtbijten", next: "trauma_kaak" }
+        ]},
+        trauma_uit: { vraag: "Gaat het om een blijvende tand of een melktand van een kind?",
+            hint: "Een blijvende (volwassen) tand kan soms teruggeplaatst worden — maar alleen als het snel gebeurt.", opties: [
+            { label: "Blijvende tand (volwassene of ouder kind)", next: "uit_blijvend" },
+            { label: "Melktand (jong kind)", next: "uit_melk" },
+            { label: "Weet ik niet zeker", next: "uit_blijvend" }
+        ]},
+        uit_blijvend: { uitkomst: { niveau: "spoed", titel: "Neem nu direct contact op",
+            uitleg: "Een uitgeslagen blijvende tand kan soms worden teruggeplaatst, maar de kans daarop daalt snel — het liefst binnen een uur.", watNu: [
+            "Pak de tand vast aan de kroon (het witte deel), niet aan de wortel.",
+            "Spoel hem heel kort af met melk of water. Niet schrobben.",
+            "Bewaar de tand in een bakje melk, of in de wang tussen kies en wang. Laat hem niet uitdrogen.",
+            "Bel meteen de praktijk. Buiten openingstijden: de tandartsspoeddienst."
+        ]}},
+        uit_melk: { uitkomst: { niveau: "snel", titel: "Bel vandaag — plaats de tand niet terug",
+            uitleg: "Een melktand wordt niet teruggeplaatst; dat kan de blijvende tand eronder beschadigen. Toch is het goed om snel even te overleggen.", watNu: [
+            "Plaats de melktand niet terug.",
+            "Stelp eventueel bloeden door op een schoon gaasje te laten bijten.",
+            "Bel vandaag de praktijk om te overleggen."
+        ]}},
+        trauma_deel: { vraag: "Heb je veel pijn of blijft het bloeden?", opties: [
+            { label: "Ja, veel pijn of aanhoudend bloeden", next: "deel_pijn" },
+            { label: "Nee, dat valt mee", next: "deel_geenpijn" }
+        ]},
+        deel_pijn: { uitkomst: { niveau: "snel", titel: "Bel vandaag (binnen 24 uur)",
+            uitleg: "Een beschadigde of losse tand met pijn kun je het best snel laten beoordelen.", watNu: [
+            "Bel vandaag de praktijk voor een afspraak.",
+            "Vermijd kauwen op de aangedane kant.",
+            "Een pijnstiller volgens de bijsluiter kan tijdelijk verlichten."
+        ]}},
+        deel_geenpijn: { uitkomst: { niveau: "regulier", titel: "Maak een afspraak op korte termijn",
+            uitleg: "Zonder pijn is dit meestal geen spoed, maar laat het wel nakijken.", watNu: [
+            "Bel de praktijk voor een afspraak.",
+            "Vermijd kauwen op die kant tot het bekeken is.",
+            "Een scherpe rand kan irriteren; meld dit bij het bellen."
+        ]}},
+        trauma_kaak: { uitkomst: { niveau: "spoed", titel: "Laat dit snel beoordelen",
+            uitleg: "Niet goed kunnen dichtbijten na een klap kan wijzen op letsel aan kaak of gebit.", watNu: [
+            "Bel direct de praktijk of de tandartsspoeddienst.",
+            "Bij ernstig letsel, bewusteloosheid of een vermoeden van een gebroken kaak: ga naar de huisartsenpost of bel 112."
+        ], spoed112: true }},
+        pijn: { vraag: "Hoe zou je de pijn omschrijven?", opties: [
+            { label: "Heftig en aanhoudend; pijnstillers helpen nauwelijks of ik word er 's nachts wakker van", next: "pijn_heftig" },
+            { label: "Vervelend maar draaglijk, met een pijnstiller te doen", next: "pijn_matig" },
+            { label: "Kort gevoelig bij warm, koud of zoet en zakt dan weer weg", next: "pijn_gevoelig" }
+        ]},
+        pijn_heftig: { vraag: "Heb je daarbij ook zwelling of koorts?", opties: [
+            { label: "Ja", next: "pijn_abces" },
+            { label: "Nee", next: "pijn_heftig_only" }
+        ]},
+        pijn_abces: { uitkomst: { niveau: "spoed", titel: "Neem vandaag nog contact op",
+            uitleg: "Heftige pijn met zwelling of koorts kan wijzen op een ontsteking (abces) die behandeld moet worden.", watNu: [
+            "Bel vandaag de praktijk; wacht hier niet mee.",
+            "Een pijnstiller (bijv. paracetamol) kan tijdelijk verlichten — volg de bijsluiter.",
+            "Bij snel toenemende zwelling, koorts, of moeite met slikken of ademen: huisartsenpost of 112."
+        ], spoed112: true }},
+        pijn_heftig_only: { uitkomst: { niveau: "snel", titel: "Bel binnen 24 uur",
+            uitleg: "Aanhoudende heftige pijn verdient snelle aandacht, ook zonder zwelling of koorts.", watNu: [
+            "Bel vandaag de praktijk voor een afspraak op korte termijn.",
+            "Een pijnstiller volgens de bijsluiter kan tijdelijk verlichten."
+        ]}},
+        pijn_matig: { uitkomst: { niveau: "snel", titel: "Bel voor een afspraak op korte termijn",
+            uitleg: "Draaglijke pijn is meestal geen spoed, maar laat de oorzaak wel tijdig nakijken.", watNu: [
+            "Bel de praktijk; vaak kan er op korte termijn een plek gevonden worden.",
+            "Houd in de gaten of de pijn erger wordt of er zwelling bijkomt — bel dan eerder."
+        ]}},
+        pijn_gevoelig: { uitkomst: { niveau: "regulier", titel: "Bespreek het bij een gewone afspraak",
+            uitleg: "Kortdurende gevoeligheid kan veel oorzaken hebben en is zelden spoed.", watNu: [
+            "Maak een afspraak voor controle.",
+            "Een tandpasta voor gevoelige tanden kan in de tussentijd helpen."
+        ]}},
+        zwelling: { vraag: "Hoe ziet de zwelling eruit?", opties: [
+            { label: "In gezicht of hals, met koorts, of moeite met slikken of ademen", next: "zwelling_ernstig" },
+            { label: "Tandvlees of wang, zonder koorts en zonder ziek gevoel", next: "zwelling_mild" }
+        ]},
+        zwelling_ernstig: { uitkomst: { niveau: "spoed", titel: "Dit is spoed",
+            uitleg: "Een zwelling met koorts, of die je slikken of ademen belemmert, kan een ernstige infectie zijn.", watNu: [
+            "Bel direct de praktijk of de tandartsspoeddienst.",
+            "Bij moeite met ademen of slikken: bel 112 of ga naar de huisartsenpost."
+        ], spoed112: true }},
+        zwelling_mild: { uitkomst: { niveau: "snel", titel: "Bel vandaag",
+            uitleg: "Een zwelling zonder koorts is meestal geen acute spoed, maar laat het wel snel beoordelen.", watNu: [
+            "Bel vandaag de praktijk voor een afspraak.",
+            "Let op of de zwelling toeneemt of er koorts bijkomt — bel dan direct."
+        ]}},
+        bloeding: { vraag: "Wat voor bloeding is het?", opties: [
+            { label: "Hevig bloeden dat niet stopt na ~20 min stevig op een gaasje bijten", next: "bloeding_hevig" },
+            { label: "Nabloeding na een ingreep, die met druk grotendeels stopt", next: "bloeding_na" }
+        ]},
+        bloeding_hevig: { uitkomst: { niveau: "spoed", titel: "Neem direct contact op",
+            uitleg: "Bloeden dat met druk niet stopt, moet snel beoordeeld worden.", watNu: [
+            "Blijf stevig op een schoon, opgevouwen gaasje bijten.",
+            "Bel direct de praktijk of de tandartsspoeddienst.",
+            "Houd je hoofd rechtop, niet voorover."
+        ]}},
+        bloeding_na: { uitkomst: { niveau: "zelfzorg", titel: "Dit kun je meestal zelf opvangen",
+            uitleg: "Wat nabloeden na een ingreep is normaal in de eerste uren.", watNu: [
+            "Bijt 30 minuten stevig op een schoon, opgevouwen gaasje of theezakje.",
+            "Niet spoelen, niet roken en geen hete dranken de eerste uren.",
+            "Stopt het na herhaald bijten niet, of wordt het erger? Bel de praktijk."
+        ]}},
+        kapot: { vraag: "Wat is er kapot of los?", opties: [
+            { label: "Vulling of kroon is eruit", next: "kapot_vulling" },
+            { label: "Stukje tand afgebroken, zonder pijn", next: "kapot_stukje" },
+            { label: "Beugel of draadje is los of prikt", next: "kapot_beugel" }
+        ]},
+        kapot_vulling: { uitkomst: { niveau: "regulier", titel: "Maak een afspraak",
+            uitleg: "Een verloren vulling of kroon zonder pijn is meestal geen spoed.", watNu: [
+            "Bel de praktijk voor een afspraak.",
+            "Bewaar een losgekomen kroon en neem hem mee.",
+            "Vermijd kauwen op die kant en houd de plek goed schoon."
+        ]}},
+        kapot_stukje: { uitkomst: { niveau: "regulier", titel: "Maak een afspraak",
+            uitleg: "Een afgebroken stukje zonder pijn kan in een gewone afspraak bekeken worden.", watNu: [
+            "Bel de praktijk voor een afspraak.",
+            "Een scherpe rand kan de tong of wang irriteren; meld dit bij het bellen."
+        ]}},
+        kapot_beugel: { uitkomst: { niveau: "regulier", titel: "Maak een afspraak",
+            uitleg: "Een los of prikkend draadje is vervelend maar zelden spoed.", watNu: [
+            "Bel de praktijk of je orthodontist voor een afspraak.",
+            "Dek een prikkend draadje af met orthodontiewax tot je geholpen wordt."
+        ]}},
+        mild: { vraag: "Welke klacht past het best?", opties: [
+            { label: "Aften of blaasjes in de mond", next: "mild_aften" },
+            { label: "Tandvlees dat licht bloedt bij poetsen of geïrriteerd is", next: "mild_tandvlees" },
+            { label: "Algemene gevoeligheid; ik twijfel of het iets is", next: "mild_twijfel" }
+        ]},
+        mild_aften: { uitkomst: { niveau: "zelfzorg", titel: "Dit gaat meestal vanzelf over",
+            uitleg: "Aften verdwijnen doorgaans binnen één tot twee weken zonder behandeling.", watNu: [
+            "Vermijd scherp, zuur of heel heet eten zolang het pijn doet.",
+            "Bel de praktijk als het langer dan twee weken duurt of steeds terugkomt."
+        ]}},
+        mild_tandvlees: { uitkomst: { niveau: "zelfzorg", titel: "Let op je mondhygiëne",
+            uitleg: "Licht bloedend tandvlees bij poetsen wijst vaak op ontsteking die met goede verzorging verbetert.", watNu: [
+            "Poets zacht maar grondig en reinig dagelijks tussen de tanden.",
+            "Bespreek het bij je volgende controle.",
+            "Bel bij fors of aanhoudend bloeden, of als het verergert."
+        ]}},
+        mild_twijfel: { uitkomst: { niveau: "regulier", titel: "Maak gerust een afspraak",
+            uitleg: "Twijfel je of iets aandacht nodig heeft, dan is een controle altijd verstandig.", watNu: [
+            "Bel de praktijk voor een afspraak.",
+            "Schrijf op wanneer en waarbij je de klacht merkt — dat helpt bij de beoordeling."
+        ]}}
+    };
+
+    var overlay = document.getElementById('triage-overlay');
+    var dialog = overlay.querySelector('.dtri-dialog');
+    var body = document.getElementById('dtri-body');
+    var navEl = document.getElementById('dtri-nav');
+    var pad = ['start'];
+    var laatsteFocus = null;
+
+    function esc(s){ var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    function telHref(){ return 'tel:' + praktijk.telefoon.replace(/[^+\d]/g, ''); }
+
+    function render(){
+        var id = pad[pad.length - 1];
+        var node = BOOM[id];
+        var stap = pad.length;
+        if (node.uitkomst){
+            var u = node.uitkomst, niv = NIVEAUS[u.niveau];
+            var html = '<section class="dtri-uitkomst" tabindex="-1" aria-live="polite" style="--lvl:' + niv.kleur + '">';
+            html += '<span class="dtri-badge">' + esc(niv.label) + '</span>';
+            html += '<h3 class="dtri-uittitel">' + esc(u.titel) + '</h3>';
+            html += '<p class="dtri-uitleg">' + esc(u.uitleg) + '</p>';
+            html += '<p class="dtri-watnu-kop">Wat u nu kunt doen</p><ul class="dtri-watnu">';
+            u.watNu.forEach(function(w){ html += '<li>' + esc(w) + '</li>'; });
+            html += '</ul>';
+            if (u.spoed112){ html += '<p class="dtri-112">Bij ademnood, fors bloedverlies of een ernstig ongeval: bel direct 112.</p>'; }
+            html += '<div class="dtri-cta"><a class="dtri-bel" href="' + telHref() + '">' +
+                '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.58 3.6 1 1 0 01-.24 1z" fill="currentColor"/></svg>' +
+                'Bel ' + esc(praktijk.naam) + ' — ' + esc(praktijk.telefoon) + '</a>';
+            if (praktijk.spoedtekst){ html += '<p class="dtri-spoedtekst">' + esc(praktijk.spoedtekst) + '</p>'; }
+            html += '</div></section>';
+            body.innerHTML = html;
+        } else {
+            var h = '<section class="dtri-vraag" tabindex="-1" aria-live="polite">';
+            h += '<p class="dtri-stap">Stap ' + stap + '</p>';
+            h += '<h3 class="dtri-q">' + esc(node.vraag) + '</h3>';
+            if (node.hint){ h += '<p class="dtri-hint">' + esc(node.hint) + '</p>'; }
+            h += '<ul class="dtri-opties">';
+            node.opties.forEach(function(o, i){
+                h += '<li><button class="dtri-optie" data-next="' + esc(o.next) + '"><span>' + esc(o.label) + '</span>' +
+                    '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></li>';
+            });
+            h += '</ul></section>';
+            body.innerHTML = h;
+            body.querySelectorAll('.dtri-optie').forEach(function(btn){
+                btn.addEventListener('click', function(){ pad.push(btn.getAttribute('data-next')); render(); });
+            });
+        }
+        // navigatie (vorige / opnieuw)
+        navEl.innerHTML = '';
+        if (stap > 1){
+            var terugBtn = document.createElement('button');
+            terugBtn.className = 'dtri-link'; terugBtn.type = 'button'; terugBtn.textContent = '← Vorige';
+            terugBtn.addEventListener('click', function(){ if (pad.length > 1){ pad.pop(); render(); } });
+            var opnieuwBtn = document.createElement('button');
+            opnieuwBtn.className = 'dtri-link'; opnieuwBtn.type = 'button'; opnieuwBtn.textContent = 'Opnieuw beginnen';
+            opnieuwBtn.addEventListener('click', function(){ pad = ['start']; render(); });
+            navEl.appendChild(terugBtn); navEl.appendChild(opnieuwBtn);
+        }
+        var focusdoel = body.firstElementChild;
+        if (focusdoel) focusdoel.focus();
+    }
+
+    function open(){
+        laatsteFocus = document.activeElement;
+        pad = ['start'];
+        render();
+        overlay.hidden = false;
+        overlay.classList.add('dtri-open');
+        document.body.style.overflow = 'hidden';
+        dialog.focus();
+    }
+    function close(){
+        overlay.hidden = true;
+        overlay.classList.remove('dtri-open');
+        document.body.style.overflow = '';
+        if (laatsteFocus && laatsteFocus.focus) laatsteFocus.focus();
+    }
+
+    document.querySelectorAll('[data-triage-open]').forEach(function(el){ el.addEventListener('click', open); });
+    overlay.querySelectorAll('[data-triage-close]').forEach(function(el){ el.addEventListener('click', close); });
+    overlay.addEventListener('mousedown', function(e){ if (e.target === overlay) close(); });
+    document.addEventListener('keydown', function(e){
+        if (overlay.hidden) return;
+        if (e.key === 'Escape'){ close(); return; }
+        if (e.key === 'Tab'){
+            var f = dialog.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])');
+            if (!f.length) return;
+            var first = f[0], last = f[f.length - 1];
+            if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+            else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+        }
+    });
+})();
 </script>
 </body>
 </html>
